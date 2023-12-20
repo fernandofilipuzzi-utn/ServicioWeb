@@ -1,0 +1,1 @@
+curl -v -X GET http://localhost:2000/WebRegistroDeEncuestaController?tbDistancia=3 --trace -

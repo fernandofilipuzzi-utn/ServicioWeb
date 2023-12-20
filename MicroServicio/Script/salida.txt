@@ -1,0 +1,38 @@
+:\repos\>curl -v -X GET http://localhost:2000/WebRegistroDeEncuestaController?tbDistancia=3 --trace -
+
+Warning: --trace overrides an earlier trace/verbose option
+Note: Unnecessary use of -X or --request, GET is already inferred.
+== Info:   Trying [::1]:2000...
+== Info: Connected to localhost (::1) port 2000
+=> Send header, 122 bytes (0x7a)
+0000: 47 45 54 20 2f 57 65 62 52 65 67 69 73 74 72 6f GET /WebRegistro
+0010: 44 65 45 6e 63 75 65 73 74 61 43 6f 6e 74 72 6f DeEncuestaContro
+0020: 6c 6c 65 72 3f 74 62 44 69 73 74 61 6e 63 69 61 ller?tbDistancia
+0030: 3d 33 20 48 54 54 50 2f 31 2e 31 0d 0a 48 6f 73 =3 HTTP/1.1..Hos
+0040: 74 3a 20 6c 6f 63 61 6c 68 6f 73 74 3a 32 30 30 t: localhost:200
+0050: 30 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 63 0..User-Agent: c
+0060: 75 72 6c 2f 38 2e 34 2e 30 0d 0a 41 63 63 65 70 url/8.4.0..Accep
+0070: 74 3a 20 2a 2f 2a 0d 0a 0d 0a                   t: */*....
+<= Recv header, 20 bytes (0x14)
+0000: 48 54 54 50 2f 31 2e 31 20 33 30 32 20 46 6f 75 HTTP/1.1 302 Fou
+0010: 6e 64 0d 0a                                     nd..
+<= Recv header, 28 bytes (0x1c)
+0000: 54 72 61 6e 73 66 65 72 2d 45 6e 63 6f 64 69 6e Transfer-Encodin
+0010: 67 3a 20 63 68 75 6e 6b 65 64 0d 0a             g: chunked..
+<= Recv header, 22 bytes (0x16)
+0000: 4c 6f 63 61 74 69 6f 6e 3a 20 69 6e 64 65 78 2e Location: index.
+0010: 68 74 6d 6c 0d 0a                               html..
+<= Recv header, 31 bytes (0x1f)
+0000: 53 65 72 76 65 72 3a 20 4d 69 63 72 6f 73 6f 66 Server: Microsof
+0010: 74 2d 48 54 54 50 41 50 49 2f 32 2e 30 0d 0a    t-HTTPAPI/2.0..
+<= Recv header, 37 bytes (0x25)
+0000: 44 61 74 65 3a 20 57 65 64 2c 20 32 30 20 44 65 Date: Wed, 20 De
+0010: 63 20 32 30 32 33 20 30 35 3a 33 38 3a 34 36 20 c 2023 05:38:46
+0020: 47 4d 54 0d 0a                                  GMT..
+<= Recv header, 2 bytes (0x2)
+0000: 0d 0a                                           ..
+<= Recv data, 5 bytes (0x5)
+0000: 30 0d 0a 0d 0a                                  0....
+== Info: Connection #0 to host localhost left intact
+
+F:\repos\repos_utn_html\ServicioWeb\MicroServicio\Script>
