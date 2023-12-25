@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de transporte - Encuestas</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNavbar"
+                aria-controls="MainNavbar" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="MainNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Sobre..</a> </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú 1.1</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" target="_blank" href="#1.1">Menú 1.1</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú 2</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" target="_blank" href="#2.1">Menú 2.1</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" target="_blank" href="#2.2">Menú 2.2</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--
+    <h3>Menú Principal</h3>
+    <ul>
+        <li><a href="inicio-encuesta.html">Iniciar Nueva Encuesta</a></li>
+        <li><a href="cierre-encuesta.html">Cierre y Estadistica</a></li>
+        <li><a href="formulario-encuesta.html">Registrar Encuesta</a></li>
+    </ul>
+    -->
+
+    <div class="container row text-center m-2">
+
+        <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+            <img src="./img/inicio-encuesta.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h2>Iniciar Nueva Encuesta</h2>
+                </div>
+                <div class="card-text" style="max-height: 60px; overflow: hidden;">
+                    <p>Cree una encuesta nueva de acuerdo a la loclidad de interés </p>
+                </div>
+
+            </div>
+            <div class="text-center">
+                <a id="btn" class="btn btn-primary" href="inicio-encuesta.html">Iniciar</a>
+            </div>
+        </div>
+
+        <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+            <img src="./img/cerrar-encuesta.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h2>Cerrar encuesta</h2>
+                </div>
+                <div class="card-text" style="max-height: 60px; overflow: hidden;">
+                    <p>Cree una encuesta nueva de acuerdo a la loclidad de interés </p>
+                </div>
+
+            </div>
+            <div class="text-center">
+                <a id="btn" class="btn btn-primary" href="cierre-encuesta.html">Iniciar</a>
+            </div>
+        </div>
+
+        <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+            <img src="./img/registrar-encuesta.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h2>Registrar Encuesta</h2>
+                </div>
+                <div class="card-text" style="max-height: 60px; overflow: hidden;">
+                    <p>Registrar Encuesta</p>
+                </div>
+
+            </div>
+            <div class="text-center">
+                <a id="btn" class="btn btn-primary" href="formulario-encuesta.html">Iniciar</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/js/fontawesome.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-svg-core@6.5.1/index.min.js"></script>
+</body>
+</html>

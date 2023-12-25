@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EE731949-32DA-4701-AEBD-5910888EF4C5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ServicioEncuestasSimple</RootNamespace>
-    <AssemblyName>ServicioEncuestasSimple</AssemblyName>
+    <RootNamespace>ServicioWebSimpleCss</RootNamespace>
+    <AssemblyName>ServicioWebSimpleCss</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -53,6 +53,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="web\img\registrar-encuesta.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\img\cerrar-encuesta.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\img\inicio-encuesta.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="web\inicio-encuesta.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -72,5 +81,6 @@
       <Name>EncuestasModels</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

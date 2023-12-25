@@ -1,5 +1,5 @@
 ﻿using EncuestasModels.Models;
-using ServicioEncuestasSimple.Controllers;
+using ServicioWebSimpleCss.Controllers;
 using System;
 using System.Collections.Specialized;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 
-namespace ServicioEncuestasSimple
+namespace ServicioWebSimpleCss
 {
     class Program
     {
@@ -95,8 +95,7 @@ namespace ServicioEncuestasSimple
         static void StopServer()
         {
         }
-
-        
+                
         /// GET
         static void HandleGetRequest(string requestedResource, 
                                      HttpListenerRequest request, 
@@ -253,7 +252,7 @@ namespace ServicioEncuestasSimple
                         string requestBody = reader.ReadToEnd();
                         var formData = ParseQueryString(requestBody);
                         string distanciaValue = formData["tbDistancia"];
-                       // controlador.GetRegistrarEncuesta(Convert.ToDouble(distanciaValue));
+                       //
                     }
 
                     response.Redirect("index.html");
@@ -318,11 +317,24 @@ namespace ServicioEncuestasSimple
 
         static void ResuelvePaginasEstaticas(string requestedResource, HttpListenerResponse response)
         {
-            string html = File.ReadAllText("web/" + requestedResource);
-            byte[] buffer = Encoding.UTF8.GetBytes(html);
-            response.ContentType = "text/html";
-            response.ContentLength64 = buffer.Length;
-            response.OutputStream.Write(buffer, 0, buffer.Length);
+            if (requestedResource.EndsWith(".jpg"))
+            {
+                byte[] buffer = File.ReadAllBytes("web/" + requestedResource);
+                response.ContentType = "image/jpeg";
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+            }
+            else if (requestedResource.EndsWith(".html") || requestedResource.EndsWith(".htm"))
+            {
+                string html = File.ReadAllText("web/" + requestedResource);
+                byte[] buffer = Encoding.UTF8.GetBytes(html);
+                response.ContentType = "text/html";
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+            }
+            else
+            { 
+            }
         }
 
         static void HtmlResponse(string html, HttpListenerResponse response)

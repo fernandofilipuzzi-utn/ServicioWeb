@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServicioEncuestasSimple.Controllers
+namespace ServicioWebSimpleCss.Controllers
 {
     internal class EncuestaController
     {
