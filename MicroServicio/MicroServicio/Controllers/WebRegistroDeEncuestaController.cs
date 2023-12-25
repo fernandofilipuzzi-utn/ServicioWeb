@@ -10,12 +10,10 @@ namespace MicroServicio.Controllers
 {
     internal class WebRegistroDeEncuestaController
     {
-        static ProcesoEncuestas gestor = new ProcesoEncuestas();
-
         public void GetRegistrarEncuesta(double distancia)
         {
-            Encuesta nueva = new Encuesta();
-            gestor.RegistrarEncuesta(nueva, false);
+            //Encuesta nueva = new Encuesta();
+            //gestor.RegistrarEncuesta(nueva, false);
         }
     }
 }
