@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasClassLib.Models
+namespace EncuestasModels.Models
 {
     public class Respuesta
     {
+        public int Id { get; set; }
         //datos personales
         public string Email { get; set; }
         //

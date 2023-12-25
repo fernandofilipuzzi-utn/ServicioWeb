@@ -1,5 +1,5 @@
-﻿using EncuestasClassLib;
-using EncuestasClassLib.Models;
+﻿using EncuestasModels;
+using EncuestasModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

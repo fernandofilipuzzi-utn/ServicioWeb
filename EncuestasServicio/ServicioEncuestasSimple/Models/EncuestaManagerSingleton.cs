@@ -1,4 +1,4 @@
-﻿using EncuestasClassLib.Models;
+﻿using EncuestasModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

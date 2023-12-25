@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasClassLib.Models
+namespace EncuestasModels.Models
 {
     public class EncuestaManager
     {
@@ -26,9 +26,5 @@ namespace EncuestasClassLib.Models
             }
         }
 
-        public void RegistrarEncuesta(Respuesta nuevo)
-        {
-            EncuestaEnCurso.RegistrarRespuesta(nuevo);
-        }
     }
 }

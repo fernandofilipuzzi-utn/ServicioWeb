@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasClassLib.Models
+namespace EncuestasModels.Models
 {
     public class Encuesta
     {
         List<Respuesta> respuestas = new List<Respuesta>();
 
+        public int Id { get; set; }
         public int Anio { get; set; }
         public string Localidad { get; set; }
         //
