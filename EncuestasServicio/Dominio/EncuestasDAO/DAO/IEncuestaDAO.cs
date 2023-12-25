@@ -13,7 +13,10 @@ namespace EncuestasDAO.DAO
         Encuesta Agregar(Encuesta Nuevo);
         Encuesta Actualizar(Encuesta Nuevo);
         void EliminarNuevo(int id);
+        //
         Encuesta BuscarPorId(int id);
         List<Encuesta> BuscarTodos();
+
+        Encuesta BuscarUltimaEncuestaNoCerrada();
     }
 }

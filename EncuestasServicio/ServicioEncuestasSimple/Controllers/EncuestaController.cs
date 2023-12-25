@@ -35,7 +35,7 @@ namespace ServicioEncuestasSimple.Controllers
                                               UsaBicicleta = usaBicicleta,
                                               Camina = camina,
                                               };
-            manager.RegistrarEncuesta(nuevo);
+            //manager.RegistrarEncuesta(nuevo);
         }
     }
 }

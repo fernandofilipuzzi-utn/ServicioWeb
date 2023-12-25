@@ -64,6 +64,12 @@ values (@anio, @localidad)";
             }
             return nueva;
         }
+                
+
+        public void EliminarNuevo(int id)
+        {
+            
+        }
 
         public Encuesta BuscarPorId(int id)
         {
@@ -75,9 +81,9 @@ values (@anio, @localidad)";
             return null;
         }
 
-        public void EliminarNuevo(int id)
+        public Encuesta BuscarUltimaEncuestaNoCerrada()
         {
-            
+            return null;
         }
     }
 }
