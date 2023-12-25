@@ -1,42 +1,40 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ServicioEncuestas._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ServicioEncuestas._Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h2>Mi Secretaria de transporte</h2>
+        <p class="lead">Encuestas sobre el uso de los transportes urbanos</p>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+    <div class="container" id="content">
+
+        <div class="sticky-inner">
+            <asp:ListView ID="menuListView" runat="server">
+
+                <LayoutTemplate>
+                    <div class="row">
+                        <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
+                    </div>
+                </LayoutTemplate>
+
+                <ItemTemplate>
+                    <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+                        <asp:Image ID="menuImage" runat="server" ImageUrl='<%# Eval("ImageUrl") %>'
+                            CssClass="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="" />
+
+                        <div class="card-body">
+                            <h5 class="card-title">"titulo"</h5>
+                            <div class="card-text"  style="max-height: 60px; overflow: hidden;">Descripción</div>
+                            
+                        </div>
+                        <div class="text-center">
+                            <asp:HyperLink ID="menuLink" CssClass="btn btn-sm btn-primary" runat="server" NavigateUrl='#'> Ingresar </asp:HyperLink>
+                        </div>
+                    </div>
+                    
+                </ItemTemplate>
+            </asp:ListView>
         </div>
     </div>
-
 </asp:Content>

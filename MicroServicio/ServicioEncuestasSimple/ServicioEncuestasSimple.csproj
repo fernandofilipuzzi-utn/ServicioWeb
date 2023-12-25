@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EE731949-32DA-4701-AEBD-5910888EF4C5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MicroServicio</RootNamespace>
-    <AssemblyName>MicroServicio</AssemblyName>
+    <RootNamespace>ServicioEncuestasSimple</RootNamespace>
+    <AssemblyName>ServicioEncuestasSimple</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
