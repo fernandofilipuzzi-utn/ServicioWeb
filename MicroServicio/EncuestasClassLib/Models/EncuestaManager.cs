@@ -16,7 +16,7 @@ namespace EncuestasClassLib.Models
         {
             EncuestaEnCurso = new Encuesta { Anio=anio, Localidad=localidad};
         }
-        public Encuesta CerrarEncuesta()
+        public void CerrarEncuesta()
         {
             if (EncuestaEnCurso != null)
             {
@@ -26,9 +26,9 @@ namespace EncuestasClassLib.Models
             }
         }
 
-        public void RegistrarEncuesta(Respuesta resp)
+        public void RegistrarEncuesta(Respuesta nuevo)
         {
-            return null;
+            EncuestaEnCurso.RegistrarRespuesta(nuevo);
         }
     }
 }

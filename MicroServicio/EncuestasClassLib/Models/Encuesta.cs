@@ -14,8 +14,10 @@ namespace EncuestasClassLib.Models
         public string Localidad { get; set; }
         //
         public double PorcBicleta { get; set; }
-        public double PorcAuto { get; set; }
+        public double PorcCaminando { get; set; }
         public double PorcTransportePublico { get; set; }
+        public double PorcTransportePrivado { get; set; }
+
         public double DistanciaMedia { get; set; }
 
         public void RegistrarRespuesta(Respuesta nuevo)
@@ -26,17 +28,21 @@ namespace EncuestasClassLib.Models
         public void ActualizarEstadistica() 
         {
             int bicicletas=0;
-            int autos=0;
+            int caminantes=0;
             int transportePublico=0;
+            int transportePrivado = 0;
+
             double distanciaTotal=0;
             foreach (Respuesta respuesta in respuestas)
             {
                 if (respuesta.UsaBicicleta)
                     bicicletas++;
-                if (respuesta.UsaAuto)
-                    autos++;
+                if (respuesta.Camina)
+                    caminantes++;
                 if (respuesta.UsaTransportePublico)
                     transportePublico++;
+                if (respuesta.UsaTransportePrivado)
+                    transportePrivado++;
 
                 distanciaTotal += respuesta.DistanciaASuDestino;
             }
@@ -44,9 +50,10 @@ namespace EncuestasClassLib.Models
             {
 
                 PorcBicleta = 100d * bicicletas / respuestas.Count; 
-                PorcAuto = 100d * autos / respuestas.Count;
+                PorcCaminando = 100d * caminantes / respuestas.Count;
                 PorcTransportePublico = 100d * transportePublico / respuestas.Count;
-                DistanciaMedia=distanciaTotal / respuestas.Count;
+                PorcTransportePrivado = 100d * transportePrivado / respuestas.Count;
+                DistanciaMedia =distanciaTotal / respuestas.Count;
             }
         }
     }

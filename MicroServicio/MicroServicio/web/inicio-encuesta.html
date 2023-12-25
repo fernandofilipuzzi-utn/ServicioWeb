@@ -3,9 +3,18 @@
 </head>
 <body>
 
-    <table>
-        <thead><tr><th>Columna 1</th><th>Columna 2</th></tr></thead>
-        <tbody><tr><td>Columna 1</td><td>Columna 2</td></tr></tbody>
-    </table>
+    <form action="./EncuestaController" method="GET">
+
+        <div>
+            <label>Año: </label> <input type="number" name="tbAnio" />
+        </div>
+        <div>
+            <label>Localidad: </label> <input type="text" name="tbLocalidad" />
+        </div>
+
+        <input type="submit" name="btnIniciarEncuesta" value="IniciarEncuesta" />
+
+    </form>
+
 </body>
 </html>

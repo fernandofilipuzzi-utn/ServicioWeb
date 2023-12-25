@@ -1,4 +1,4 @@
-﻿using MicroServicio.Controllers;
+﻿using ServicioEncuestaSimple.Controllers;
 using System;
 using System.Collections.Specialized;
 using System.IO;
@@ -92,6 +92,7 @@ namespace servicio
         static void HandleGetRequest(string requestedResource, HttpListenerRequest request, HttpListenerResponse response)
         {
 
+            
             if (File.Exists("web/" + requestedResource) == true)
             {
                 #region páginas estáticas
@@ -104,13 +105,31 @@ namespace servicio
             }
             else
             {
-                if (requestedResource == "/WebRegistroDeEncuestaController")
+                if (requestedResource == "/encuesta-controller")
                 {
-                    WebRegistroDeEncuestaController controlador = new WebRegistroDeEncuestaController();
+                    EncuestaController controlador = new EncuestaController();
 
                     NameValueCollection queryParams = request.QueryString;
-                    string distanciaValue = queryParams["tbDistancia"];
-                    controlador.GetRegistrarEncuesta(Convert.ToDouble(distanciaValue));
+
+                    string accion = queryParams["btnAccion"];
+
+                    if (accion == "registrarRespuesta")
+                    {
+                        string email = queryParams["tbEmail"];
+
+                        bool usaBicleta = queryParams["ckbUsaBicicleta"] == "1";
+                        bool camina = queryParams["ckbCamina"]=="1";
+                        bool usaTransportePublico = queryParams["ckbTransportePublico"] == "1";
+                        bool usaTransportePrivado = queryParams["ckbTransportePrivado"] == "1";
+                        double distancia = 0;
+                        if (string.IsNullOrEmpty(queryParams["tbDistancia"]))
+                            distancia = Convert.ToDouble(queryParams["tbDistancia"]);
+
+
+                        controlador.GetRegistrarEncuesta( email,
+                                                          usaBicleta, camina, usaTransportePublico, usaTransportePrivado,
+                                                          distancia);
+                    }
 
                     response.Redirect("index.html");
                 }
@@ -138,14 +157,14 @@ namespace servicio
             {
                 if (requestedResource == "/WebRegistroDeEncuestaController")
                 {
-                    WebRegistroDeEncuestaController controlador = new WebRegistroDeEncuestaController();
+                    EncuestaController controlador = new EncuestaController();
 
                     using (var reader = new StreamReader(request.InputStream))
                     {
                         string requestBody = reader.ReadToEnd();
                         var formData = ParseQueryString(requestBody);
                         string distanciaValue = formData["tbDistancia"];
-                        controlador.GetRegistrarEncuesta(Convert.ToDouble(distanciaValue));
+                       // controlador.GetRegistrarEncuesta(Convert.ToDouble(distanciaValue));
                     }
 
                     response.Redirect("index.html");

@@ -3,9 +3,41 @@
 </head>
 <body>
 
-    <table>
-        <thead><tr><th>Columna 1</th><th>Columna 2</th></tr></thead>
-        <tbody><tr><td>Columna 1</td><td>Columna 2</td></tr></tbody>
-    </table>
+    <form action="./encuesta-controller" method="GET">
+        <div>
+            <h4>Datos personales</h4>
+            <label for="tbEmail">Email: </label>
+            <input type="email" id="tbEmail" name="tbEmail" />
+        </div>
+        <br />
+        <div>
+            <h4>¿Qué medio de transporte usa con mayor frecuencia?. Tilde una o más opciones</h4>
+            <br />
+
+            <input type="checkbox" id="ckbUsaBicicleta" name="ckbUsaBicicleta" value="1a">
+            <label for="ckbUsaBicicleta"> Bicicleta</label>
+            <br />
+
+            <input type="checkbox" id="ckbCamina" name="ckbCamina" value="1">
+            <label for="ckbCamina"> Caminando</label>
+            <br />
+
+            <input type="checkbox" id="ckbTransportePublico" name="ckbTransportePublico" value="1">
+            <label for="ckbTransportePublico"> Transporte público, (colectivo, remis, tren, etc)</label>
+            br />
+
+            <input type="checkbox" id="ckbTransportePrivado" name="ckbTransportePrivado" value="1">
+            <label for="ckbTransportePrivado"> Automóvil, Ciclomotor, etc</label>
+            <br />
+        </div>
+        <br />
+        <div>
+            <label for="tbDistancia">Distancia al lugar de trabajo o estudio: </label>
+            <input type="number" id="tbDistancia" name="tbDistancia" />(km)
+        </div>
+        <br />
+        <input type="submit" name="btnAccion" value="registrarRespuesta" />
+    </form>
+
 </body>
 </html>
