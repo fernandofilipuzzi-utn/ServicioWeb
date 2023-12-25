@@ -1,10 +1,11 @@
-﻿using System;
+﻿using EncuestasModels.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasModels.Models
+namespace EncuestasModels.Services
 {
     public class EncuestaManager
     {

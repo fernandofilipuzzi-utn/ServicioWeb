@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24F04221-1406-47B4-8DEB-8055F69B720A}</ProjectGuid>
+    <ProjectGuid>{CF14C57A-404D-4834-8F03-2D0B6120A286}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EncuestasDAO</RootNamespace>
-    <AssemblyName>EncuestasDAO</AssemblyName>
+    <RootNamespace>EncuestasModels</RootNamespace>
+    <AssemblyName>EncuestasModels</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,18 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\IEncuestaDAO.cs" />
-    <Compile Include="DAO\IRespuestaDAO.cs" />
+    <Compile Include="Models\Encuesta.cs" />
+    <Compile Include="Services\EncuestaManager.cs" />
+    <Compile Include="Models\Respuesta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="uml\dao.uml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EncuestasModels\EncuestasModels.csproj">
-      <Project>{cf14c57a-404d-4834-8f03-2d0b6120a286}</Project>
-      <Name>EncuestasModels</Name>
-    </ProjectReference>
+    <None Include="uml\encuestas.uml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

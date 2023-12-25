@@ -1,4 +1,5 @@
 ﻿using EncuestasDAO.DAO;
+using EncuestasModels.Models;
 using EncuestasSQLServerDaoImpl.SQLServerdaoImpl;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasModels.Models
+namespace EncuestaServicio.Models
 {
     public class EncuestaManager
     {
