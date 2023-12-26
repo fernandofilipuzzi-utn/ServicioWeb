@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestaServicio.Models
+namespace EncuestaServicio.Services
 {
     public class EncuestaManager
     {

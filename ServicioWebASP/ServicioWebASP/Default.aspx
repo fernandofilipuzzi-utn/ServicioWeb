@@ -2,6 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <div class="jumbotron">
+        <h3>Mi ministerio de transporte</h3>
+        <p>Encuesta sobre el uso del transporte.</p>
+    </div>
+
     <div class="container row text-center m-2">
 
         <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
@@ -16,7 +21,7 @@
 
             </div>
             <div class="text-center">
-                <a class="btn btn-primary" href="inicio-encuesta.html">Iniciar</a>
+                <a class="btn btn-primary" href="InicioEncuesta.aspx">Iniciar</a>
             </div>
         </div>
 

@@ -3,4 +3,10 @@
         Inherits="ServicioEncuestas.CierreEncuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="jumbotron">
+        <h3>Mi ministerio de transporte</h3>
+        <p>Encuesta sobre el uso del transporte.</p>
+    </div>
+
 </asp:Content>
