@@ -61,5 +61,12 @@
       <Name>EncuestasSQLServerDaoImpl</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="uml\completo.uml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="uml\completo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

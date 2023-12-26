@@ -46,13 +46,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="uml\dao.uml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\ServicioWebSimple\Dominio\EncuestasModels\EncuestasModels.csproj">
       <Project>{cf14c57a-404d-4834-8f03-2d0b6120a286}</Project>
       <Name>EncuestasModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uml\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

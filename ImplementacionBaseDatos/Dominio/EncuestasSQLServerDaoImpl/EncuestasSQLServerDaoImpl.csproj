@@ -55,5 +55,11 @@
       <Name>EncuestasDAO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="uml\dao.uml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="uml\dao.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

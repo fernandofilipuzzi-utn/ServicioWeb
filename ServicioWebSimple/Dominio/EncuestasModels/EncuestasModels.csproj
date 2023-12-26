@@ -46,9 +46,11 @@
     <Compile Include="Models\Respuesta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="uml\encuestas.uml" />
+    <Content Include="uml\modelo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="uml\modelo.uml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,8 @@ namespace EncuestaServicio.Models
     {
         //inyección!
         IEncuestaDAO encuestaDAO { get; set; } = new EncuestaSQLServerDaoImpl();
-          
+        IRespuestaDAO respuestaDAO { get; set; } = new RespuestaSQLServerDaoImpl();
+
         public Encuesta EncuestaEnCurso 
         {
             get {
@@ -34,6 +35,14 @@ namespace EncuestaServicio.Models
                 EncuestaEnCurso.ActualizarEstadistica();
                 encuestaDAO.Actualizar(EncuestaEnCurso);
             }
+        }
+
+
+        public void RegistrarRespuesta(Respuesta nuevo)
+        {
+            respuestaDAO.Agregar(nuevo);
+            EncuestaEnCurso.RegistrarRespuesta(nuevo);
+            encuestaDAO.Actualizar(EncuestaEnCurso);
         }
     }
 }
