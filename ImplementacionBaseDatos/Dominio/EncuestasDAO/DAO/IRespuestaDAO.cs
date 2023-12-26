@@ -11,7 +11,7 @@ namespace EncuestasDAO.DAO
     {
         Respuesta Agregar(Respuesta Nuevo);
         Respuesta Actualizar(Respuesta Nuevo);
-        void EliminarNuevo(int id);
+        void Eliminar(int id);
         Respuesta BuscarPorId(int id);
         List<Respuesta> BuscarTodos();
 

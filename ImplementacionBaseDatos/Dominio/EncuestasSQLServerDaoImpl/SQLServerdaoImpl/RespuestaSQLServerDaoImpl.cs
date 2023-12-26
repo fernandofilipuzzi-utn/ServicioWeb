@@ -21,7 +21,7 @@ namespace EncuestasSQLServerDaoImpl.SQLServerdaoImpl
             throw new NotImplementedException();
         }
 
-        public void EliminarNuevo(int id)
+        public void Eliminar(int id)
         {
             //
         }

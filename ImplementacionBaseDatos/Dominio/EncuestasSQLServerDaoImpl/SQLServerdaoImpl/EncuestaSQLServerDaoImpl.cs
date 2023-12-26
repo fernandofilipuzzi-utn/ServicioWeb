@@ -66,7 +66,7 @@ values (@anio, @localidad)";
         }
                 
 
-        public void EliminarNuevo(int id)
+        public void Eliminar(int id)
         {
             
         }
