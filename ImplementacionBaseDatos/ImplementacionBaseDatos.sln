@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Encuesta_Delete", "DB_En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Respuesta_Select", "DB_Respuesta_Select\DB_Respuesta_Select.csproj", "{1D904486-9E1F-4AE8-9978-B7C20CEC97DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Respuesta_Insert", "DB_Respuesta_Insert\DB_Respuesta_Insert.csproj", "{7D6B18D1-CC87-419C-96FC-F5DFB8A6900B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{1D904486-9E1F-4AE8-9978-B7C20CEC97DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D904486-9E1F-4AE8-9978-B7C20CEC97DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D904486-9E1F-4AE8-9978-B7C20CEC97DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D6B18D1-CC87-419C-96FC-F5DFB8A6900B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D6B18D1-CC87-419C-96FC-F5DFB8A6900B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D6B18D1-CC87-419C-96FC-F5DFB8A6900B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D6B18D1-CC87-419C-96FC-F5DFB8A6900B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{4065E54B-56B0-4A4D-9C16-E417E400B38F} = {14F32590-D7D7-4F31-A79D-BD8AC540C257}
 		{2A1FC062-D92E-47CA-A81B-812D79FA634B} = {14F32590-D7D7-4F31-A79D-BD8AC540C257}
 		{1D904486-9E1F-4AE8-9978-B7C20CEC97DF} = {14F32590-D7D7-4F31-A79D-BD8AC540C257}
+		{7D6B18D1-CC87-419C-96FC-F5DFB8A6900B} = {14F32590-D7D7-4F31-A79D-BD8AC540C257}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E74AFCEE-393C-4347-BF7A-ECABD0EA6820}
