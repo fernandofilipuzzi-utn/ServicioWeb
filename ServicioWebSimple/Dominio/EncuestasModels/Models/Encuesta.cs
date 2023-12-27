@@ -20,6 +20,7 @@ namespace EncuestasModels.Models
         public double PorcTransportePrivado { get; set; }
 
         public double DistanciaMedia { get; set; }
+        public bool EnCurso { get; set; }
 
         public int CantidadEncuestados 
         {
@@ -64,6 +65,11 @@ namespace EncuestasModels.Models
                 PorcTransportePrivado = 100d * transportePrivado / CantidadEncuestados;
                 DistanciaMedia =distanciaTotal / CantidadEncuestados;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{Localidad}({Anio})";
         }
     }
 }

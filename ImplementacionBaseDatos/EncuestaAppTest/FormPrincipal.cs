@@ -21,10 +21,11 @@ namespace EncuestaAppTest
         private void btnIniciarEncuesta_Click(object sender, EventArgs e)
         {
             FormInicioEncuesta formInicio = new FormInicioEncuesta();
+            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                       
+
             if (formInicio.ShowDialog() == DialogResult.OK)
             {
-                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
-
                 int anio = Convert.ToInt32(formInicio.tbANIO.Text);
                 string localidad = formInicio.tbLocalidad.Text;
 
@@ -37,9 +38,13 @@ namespace EncuestaAppTest
             try
             {
                 FormFormularioEncuesta formRespuesta = new FormFormularioEncuesta();
+                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
+                formRespuesta.cbLocalidad.Items.AddRange(manager.EncuestasEnCurso.ToArray<Encuesta>());
+
                 if (formRespuesta.ShowDialog() == DialogResult.OK)
                 {
-                    EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                    
 
                     Respuesta nueva = new Respuesta
                     {
@@ -51,7 +56,7 @@ namespace EncuestaAppTest
                         DistanciaASuDestino = 23d
                     };
 
-                    manager.RegistrarRespuesta(nueva);
+                    manager.RegistrarRespuesta(nueva, formRespuesta.cbLocalidad.SelectedItem as Encuesta);
                 }
             }
             catch (Exception ex)

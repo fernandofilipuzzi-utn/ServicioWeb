@@ -37,17 +37,19 @@ namespace EncuestasSQLServerDaoImpl.SQLServerdaoImpl
                 conn.Open();
 
                 string sql = @"
-insert encuestas (anio, localidad)
+insert encuestas (anio, localidad, en_curso)
 output INSERTED.id 
-values (@anio, @localidad)";
+values (@anio, @localidad, @enCurso)";
 
                 using (var query = new SqlCommand(sql, conn))
                 {
                     query.Parameters.Add(new SqlParameter("anio", SqlDbType.Int));
                     query.Parameters.Add(new SqlParameter("localidad", SqlDbType.VarChar));
+                    query.Parameters.Add(new SqlParameter("enCurso", SqlDbType.Bit));
                     //
                     query.Parameters["anio"].Value = nueva.Anio;
                     query.Parameters["localidad"].Value = nueva.Localidad;
+                    query.Parameters["enCurso"].Value = nueva.EnCurso;
                     //
                     //rowsaffected += query.ExecuteNonQuery();
                     Int32 id = (Int32)query.ExecuteScalar();
@@ -81,9 +83,65 @@ values (@anio, @localidad)";
             return null;
         }
 
-        public Encuesta BuscarUltimaEncuestaNoCerrada()
+        public List<Encuesta> BuscarUltimasEncuestaNoCerradas()
         {
-            return null;
+            List<Encuesta> encuestasActivasLoclidades = new List<Encuesta>();
+
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = @"
+select id, anio, localidad, en_curso 
+from encuestas 
+where en_curso=1
+order by id asc";
+
+                using (var command = new SqlCommand(sql, conn))
+                {
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        #region ID
+                        int id = 0;
+                        if (dataReader["id"] != DBNull.Value)
+                            id = (int)dataReader["id"];
+                        #endregion
+
+                        #region nombre
+                        int anio = 0;
+                        if (dataReader["anio"] != DBNull.Value)
+                            anio = Convert.ToInt32(dataReader["anio"]);
+                        #endregion
+
+                        #region localidad
+                        string localidad = "";
+                        if (dataReader["localidad"] != DBNull.Value)
+                            localidad = dataReader["localidad"] as string;
+                        #endregion
+
+                        #region actual!
+                        bool enCurso = false;
+                        if (dataReader["en_curso"] != DBNull.Value)
+                            enCurso = (bool)dataReader["en_curso"];
+                        #endregion
+
+                        Encuesta encuesta = new Encuesta { Id = id, Localidad = localidad, Anio = anio , EnCurso=enCurso};
+                        encuestasActivasLoclidades.Add(encuesta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+            return encuestasActivasLoclidades;
         }
     }
 }
