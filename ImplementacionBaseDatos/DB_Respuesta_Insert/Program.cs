@@ -22,7 +22,7 @@ namespace DB_Respuesta_Insert
                                             DistanciaASuDestino=23};
             //aquí tenemos que considerar a que encuesta pertenece esa respuesta
             //y solo aquí presupong que esta dada de alta con id=2
-            Encuesta pertenece_a_esta_respuesta = new Encuesta { Id = 2, Anio = 2023, Localidad = "Paraná" };
+            Encuesta aDondePertenec = new Encuesta { Id = 2, Anio = 2023, Localidad = "Paraná" };
             //tengo dos objetos de entrada a esta subrutina, una es la respuesta, y otra donde pertence
             // 
             //en el dao quedarán separados los dos insert,
@@ -62,7 +62,7 @@ values (@email, @usaBicicleta, @camina, @usaTransportePublico, @usaTransportePri
                     query.Parameters["usaTransportePublico"].Value = nueva.UsaTransportePublico;
                     query.Parameters["usaTransportePrivado"].Value = nueva.UsaTransportePrivado;
                     query.Parameters["distanciaASuDestino"].Value = nueva.DistanciaASuDestino;
-                    query.Parameters["id_encuesta"].Value = pertenece_a_esta_respuesta.Id;
+                    query.Parameters["id_encuesta"].Value = aDondePertenec.Id;
                     //
                     //rowsaffected += query.ExecuteNonQuery();
                     Int32 id = (Int32)query.ExecuteScalar();

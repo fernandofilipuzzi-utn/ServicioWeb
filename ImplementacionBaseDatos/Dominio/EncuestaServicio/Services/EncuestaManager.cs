@@ -37,12 +37,10 @@ namespace EncuestaServicio.Services
             }
         }
 
-
         public void RegistrarRespuesta(Respuesta nuevo)
         {
-            respuestaDAO.Agregar(nuevo);
+            respuestaDAO.Agregar(nuevo, EncuestaEnCurso);
             EncuestaEnCurso.RegistrarRespuesta(nuevo);
-            encuestaDAO.Actualizar(EncuestaEnCurso);
         }
     }
 }

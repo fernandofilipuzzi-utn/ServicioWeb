@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EncuestasModels.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace EncuestaAppTest
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIniciarEncuesta_Click(object sender, EventArgs e)
         {
             FormInicioEncuesta formInicio = new FormInicioEncuesta();
             if (formInicio.ShowDialog() == DialogResult.OK)
@@ -28,6 +29,34 @@ namespace EncuestaAppTest
                 string localidad = formInicio.tbLocalidad.Text;
 
                 manager.IniciarEncuesta(anio, localidad);
+            }
+        }
+
+        private void btnRegistrarEncuesta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormFormularioEncuesta formRespuesta = new FormFormularioEncuesta();
+                if (formRespuesta.ShowDialog() == DialogResult.OK)
+                {
+                    EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
+                    Respuesta nueva = new Respuesta
+                    {
+                        Email = formRespuesta.tbEmail.Text,
+                        UsaBicicleta = false,
+                        Camina = false,
+                        UsaTransportePublico = false,
+                        UsaTransportePrivado = false,
+                        DistanciaASuDestino = 23d
+                    };
+
+                    manager.RegistrarRespuesta(nueva);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}||{ex.StackTrace}", "Error!");
             }
         }
     }

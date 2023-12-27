@@ -29,47 +29,48 @@ namespace EncuestaAppTest
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnIniciarEncuesta = new System.Windows.Forms.Button();
+            this.btnRegistrarEncuesta = new System.Windows.Forms.Button();
+            this.btnCerrarEncuesta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnIniciarEncuesta
             // 
-            this.button1.Location = new System.Drawing.Point(57, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Iniciar Nueva Encuesta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnIniciarEncuesta.Location = new System.Drawing.Point(57, 36);
+            this.btnIniciarEncuesta.Name = "btnIniciarEncuesta";
+            this.btnIniciarEncuesta.Size = new System.Drawing.Size(249, 47);
+            this.btnIniciarEncuesta.TabIndex = 0;
+            this.btnIniciarEncuesta.Text = "Iniciar Nueva Encuesta";
+            this.btnIniciarEncuesta.UseVisualStyleBackColor = true;
+            this.btnIniciarEncuesta.Click += new System.EventHandler(this.btnIniciarEncuesta_Click);
             // 
-            // button2
+            // btnRegistrarEncuesta
             // 
-            this.button2.Location = new System.Drawing.Point(57, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(249, 47);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cerrar encuesta";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRegistrarEncuesta.Location = new System.Drawing.Point(57, 142);
+            this.btnRegistrarEncuesta.Name = "btnRegistrarEncuesta";
+            this.btnRegistrarEncuesta.Size = new System.Drawing.Size(249, 47);
+            this.btnRegistrarEncuesta.TabIndex = 1;
+            this.btnRegistrarEncuesta.Text = "Registrar Encuesta";
+            this.btnRegistrarEncuesta.UseVisualStyleBackColor = true;
+            this.btnRegistrarEncuesta.Click += new System.EventHandler(this.btnRegistrarEncuesta_Click);
             // 
-            // button3
+            // btnCerrarEncuesta
             // 
-            this.button3.Location = new System.Drawing.Point(57, 142);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(249, 47);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Registrar Encuesta";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCerrarEncuesta.Location = new System.Drawing.Point(57, 89);
+            this.btnCerrarEncuesta.Name = "btnCerrarEncuesta";
+            this.btnCerrarEncuesta.Size = new System.Drawing.Size(249, 47);
+            this.btnCerrarEncuesta.TabIndex = 2;
+            this.btnCerrarEncuesta.Text = "Cerrar Encuesta";
+            this.btnCerrarEncuesta.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 238);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCerrarEncuesta);
+            this.Controls.Add(this.btnRegistrarEncuesta);
+            this.Controls.Add(this.btnIniciarEncuesta);
             this.Name = "FormPrincipal";
             this.Text = "Mi ministerio de transporte";
             this.ResumeLayout(false);
@@ -78,9 +79,9 @@ namespace EncuestaAppTest
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnIniciarEncuesta;
+        private System.Windows.Forms.Button btnRegistrarEncuesta;
+        private System.Windows.Forms.Button btnCerrarEncuesta;
     }
 }
 
