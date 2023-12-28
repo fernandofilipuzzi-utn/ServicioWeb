@@ -21,7 +21,7 @@
 
             </div>
             <div class="text-center">
-                <a class="btn btn-primary" href="InicioEncuesta.aspx">Iniciar</a>
+                <a class="btn btn-primary" href="InicioEncuesta.aspx">Ir</a>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
 
             </div>
             <div class="text-center">
-                <a class="btn btn-primary" href="cierre-encuesta.html">Iniciar</a>
+                <a class="btn btn-primary" href="CierreEncuesta.aspx">Ir</a>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
 
             </div>
             <div class="text-center">
-                <a class="btn btn-primary" href="formulario-encuesta.html">Iniciar</a>
+                <a class="btn btn-primary" href="FormularioEncuesta.aspx">Ir</a>
             </div>
         </div>
 

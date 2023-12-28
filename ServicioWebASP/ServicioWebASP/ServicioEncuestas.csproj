@@ -209,6 +209,10 @@
       <Project>{55701cf7-2994-46b1-b68d-b8c623154c8d}</Project>
       <Name>EncuestaServicio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ImplementacionBaseDatos\Dominio\EncuestasSQLServerDaoImpl\EncuestasSQLServerDaoImpl.csproj">
+      <Project>{ba2dd45f-e7e2-4d69-98df-1e725db387d5}</Project>
+      <Name>EncuestasSQLServerDaoImpl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ServicioWebSimple\Dominio\EncuestasModels\EncuestasModels.csproj">
       <Project>{cf14c57a-404d-4834-8f03-2d0b6120a286}</Project>
       <Name>EncuestasModels</Name>

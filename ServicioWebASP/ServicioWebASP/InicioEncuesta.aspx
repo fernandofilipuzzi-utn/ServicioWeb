@@ -10,7 +10,6 @@
 
     <div class="container col-8 ">
                 
-        
             <h3 class="text-center">Inicio de nueva encuesta</h3>
 
             <div class="form-inline m-2">
@@ -24,7 +23,5 @@
             <div class="text-center m-2">
                 <asp:Button ID="btnIniciarEncuesta" type="button" CssClass="btn btn-primary" name="btnAccion" Text="Iniciar" OnClick="btnIniciarEncuesta_Click" runat="server"/>
             </div>
-            
-       
     </div>
 </asp:Content>

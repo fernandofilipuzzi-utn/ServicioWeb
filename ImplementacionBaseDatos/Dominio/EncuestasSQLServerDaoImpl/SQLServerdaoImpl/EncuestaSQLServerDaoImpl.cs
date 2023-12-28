@@ -130,9 +130,70 @@ values (@anio, @localidad, @enCurso)";
             
         }
 
-        public Encuesta BuscarPorId(int id)
+        public Encuesta BuscarPorId(int idBuscado)
         {
-            return null;
+            Encuesta buscado = null;
+
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                //agregar los campos que faltan
+                string sql = @"
+select id, anio, localidad, en_curso 
+from encuestas 
+where id=@Id";
+
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    query.Parameters.Add(new SqlParameter("Id", SqlDbType.Int));
+                    //
+                    query.Parameters["Id"].Value = idBuscado;
+
+                    SqlDataReader dataReader = query.ExecuteReader();
+                    
+                    if( dataReader.Read() )
+                    {
+                        #region ID
+                        int id = 0;
+                        if (dataReader["id"] != DBNull.Value)
+                            id = (int)dataReader["id"];
+                        #endregion
+
+                        #region nombre
+                        int anio = 0;
+                        if (dataReader["anio"] != DBNull.Value)
+                            anio = Convert.ToInt32(dataReader["anio"]);
+                        #endregion
+
+                        #region localidad
+                        string localidad = "";
+                        if (dataReader["localidad"] != DBNull.Value)
+                            localidad = dataReader["localidad"] as string;
+                        #endregion
+
+                        #region actual!
+                        bool enCurso = false;
+                        if (dataReader["en_curso"] != DBNull.Value)
+                            enCurso = (bool)dataReader["en_curso"];
+                        #endregion
+
+                        buscado = new Encuesta { Id = id, Localidad = localidad, Anio = anio, EnCurso = enCurso };
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+            return buscado;
         }
 
         public List<Encuesta> BuscarTodos()
