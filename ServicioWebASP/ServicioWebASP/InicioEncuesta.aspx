@@ -3,26 +3,31 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
-        <h3>Mi ministerio de transporte</h3>
-        <p>Encuesta sobre el uso del transporte.</p>
+        <h3 class="display-4">Inicio de nueva encuesta</h3>
+        <p class="lead">Para abrir un nuevo proceso de encuestas ingrese el año y la localidad de interés. Finalmente
+            para confirmar el alta haga click en "Iniciar Nueva Encuesta"
+        </p>
     </div>
 
 
-    <div class="container col-8 ">
+     <div class="container">
                 
-            <h3 class="text-center">Inicio de nueva encuesta</h3>
-
+        <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
+            <h3 class="text-center">Datos generales</h3>
 
             <div class="form-inline m-2">
                 <label class="col-3" for="tbAni">Año: </label> 
                 <asp:TextBox ID="tbANIO" CssClass="form-control col-5" type="number" name="tbAnio" runat="server" />
             </div>
+
             <div class="form-inline m-2">
                 <label for="tbLocalidad" class="col-3">Localidad: </label> 
                 <asp:TextBox ID="tbLocalidad" CssClass="form-control col-5"  type="text"  name="tbLocalidad" runat="server"/>
             </div>
-            <div class="text-center m-2">
-                <asp:Button ID="btnIniciarEncuesta" type="button" CssClass="btn btn-primary" name="btnAccion" Text="Iniciar" OnClick="btnIniciarEncuesta_Click" runat="server"/>
-            </div>
+        </div>
+
+        <div class="text-center m-2">
+            <asp:Button ID="btnIniciarEncuesta" type="button" CssClass="btn btn-primary" name="btnAccion" Text="Iniciar Nueva Encuesta" OnClick="btnIniciarEncuesta_Click" runat="server"/>
+        </div>
     </div>
 </asp:Content>

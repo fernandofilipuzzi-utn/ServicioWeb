@@ -5,30 +5,35 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h3>Mi ministerio de transporte</h3>
-        <p>Encuesta sobre el uso del transporte.</p>
+        <h3 class="display-4">En cuesta sobre el uso del transporte</h3>
+        <p class="lead">
+            Responda las preguntas a continuación sobre su uso del transporte
+        </p>
     </div>
 
-    <h3>Encuesta sobre el uso de transporte</h3>
+    <div class="container">
 
-    <div class="form b-2 m-2">
-        <div class="form-group">
-            <label for="cbLocalidad">Localidad: </label>
-            <asp:DropDownList ID="cbLocalidad" 
-                                class="form-control" 
-                                name="tbDistancia" 
-                                DataTextField="Localidad"
-                                DataValueField="Id"
-                                runat="server" />
-        </div>
+        <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
 
-        <div class="form-group">
             <h4>Datos personales</h4>
-            <label for="tbEmail">Email: </label>
-            <asp:TextBox ID="tbEmail" class="form-control" type="email" name="tbEmail" runat="server" />
+
+            <div class="form-group">
+                <label for="tbEmail">Email: </label>
+                <asp:TextBox ID="tbEmail" class="form-control" type="email" name="tbEmail" runat="server" />
+            </div>
+
+            <div class="form-group">
+                <label for="cbLocalidad">Elija la Localidad a la que pertence: </label>
+                <asp:DropDownList ID="cbLocalidad"
+                    class="form-control"
+                    name="tbDistancia"
+                    DataTextField="Localidad"
+                    DataValueField="Id"
+                    runat="server" />
+            </div>
         </div>
 
-        <div>
+        <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
             <h4>¿Qué medio de transporte usa con mayor frecuencia?. Tilde una o más opciones</h4>
 
             <div class="form-inline">
@@ -52,13 +57,16 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="tbDistancia">Distancia al lugar de trabajo o estudio: </label>
-            <asp:TextBox ID="tbDistancia" name="tbDistancia" runat="server" />(km)
+        <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
+            <div class="form-group">
+                <label for="tbDistancia">Distancia al lugar de trabajo o estudio: </label>
+                <asp:TextBox ID="tbDistancia" name="tbDistancia" runat="server" />(km)
+            </div>
         </div>
 
-        <div class="text-center">
+        <div class="text-center m-2">
             <asp:Button ID="btnAccion" name="btnAccion" class="btn btn-primary" Text="Registrar Respuesta" OnClick="btnAccion_Click" runat="server" />
         </div>
     </div>
+
 </asp:Content>

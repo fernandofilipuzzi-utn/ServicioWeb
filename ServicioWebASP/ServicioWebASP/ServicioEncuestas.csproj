@@ -108,6 +108,9 @@
     <Content Include="CierreEncuesta.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="docs\pantallazo_formulario_encuesta.jpg" />
+    <Content Include="docs\pantallazo_inicio_encuesta.jpg" />
+    <Content Include="docs\pantallazo_menu.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormularioEncuesta.aspx" />

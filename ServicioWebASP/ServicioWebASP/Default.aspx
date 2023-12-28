@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h3>Mi ministerio de transporte</h3>
-        <p>Encuesta sobre el uso del transporte.</p>
+        <h3 class="display-4">Mi ministerio de transporte</h3>
+        <p class="lead">Encuesta sobre el uso del transporte.</p>
     </div>
 
     <div class="container row text-center m-2">
