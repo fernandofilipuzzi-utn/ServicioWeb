@@ -13,5 +13,23 @@ namespace ServicioEncuestas
 
     public partial class CierreEncuesta
     {
+
+        /// <summary>
+        /// Control cbLocalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbLocalidad;
+
+        /// <summary>
+        /// Control btnAccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAccion;
     }
 }

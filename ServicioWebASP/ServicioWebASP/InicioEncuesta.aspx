@@ -12,6 +12,7 @@
                 
             <h3 class="text-center">Inicio de nueva encuesta</h3>
 
+
             <div class="form-inline m-2">
                 <label class="col-3" for="tbAni">Año: </label> 
                 <asp:TextBox ID="tbANIO" CssClass="form-control col-5" type="number" name="tbAnio" runat="server" />

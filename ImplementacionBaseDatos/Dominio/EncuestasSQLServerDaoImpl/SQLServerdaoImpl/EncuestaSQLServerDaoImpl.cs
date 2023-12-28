@@ -142,7 +142,7 @@ values (@anio, @localidad, @enCurso)";
 
                 //agregar los campos que faltan
                 string sql = @"
-select id, anio, localidad, en_curso 
+select id, anio, localidad, porc_bicicleta, porc_caminando, porc_transporte_publico, porc_transporte_privado, distancia_media, en_curso 
 from encuestas 
 where id=@Id";
 
@@ -174,13 +174,27 @@ where id=@Id";
                             localidad = dataReader["localidad"] as string;
                         #endregion
 
+                        #region porcentaje  bicicleta
+                        double? porcBicicleta = dataReader["porc_bicicleta"] as double?;
+                        double? porcCaminando = dataReader["porc_caminando"] as double?;
+                        double? porcTransportePublico = dataReader["porc_transporte_publico"] as double?;
+                        double? porcTransportePrivado = dataReader["porc_transporte_privado"] as double?;
+                        double? distanciaMedia = dataReader["distancia_media"] as double?;
+                        #endregion
+
                         #region actual!
                         bool enCurso = false;
                         if (dataReader["en_curso"] != DBNull.Value)
                             enCurso = (bool)dataReader["en_curso"];
                         #endregion
 
-                        buscado = new Encuesta { Id = id, Localidad = localidad, Anio = anio, EnCurso = enCurso };
+                        buscado = new Encuesta { Id = id, Localidad = localidad, Anio = anio, 
+                                                 PorcBicleta=porcBicicleta,
+                                                 PorcCaminando= porcCaminando,
+                                                 PorcTransportePublico= porcTransportePublico,
+                                                 PorcTransportePrivado= porcTransportePrivado,
+                                                 DistanciaMedia= distanciaMedia ,
+                                                 EnCurso = enCurso };
                         
                     }
                 }
