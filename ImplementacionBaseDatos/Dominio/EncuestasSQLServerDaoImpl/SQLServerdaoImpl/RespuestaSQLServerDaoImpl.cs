@@ -12,20 +12,24 @@ namespace EncuestasSQLServerDaoImpl.SQLServerdaoImpl
 {
     public class RespuestaSQLServerDaoImpl : IRespuestaDAO
     {
+        #region parámetros
+        string servidor = "TSP";
+        string baseDatos = "db_encuestas";
+        #endregion
+        string cadenaConexion = "";
+
+        public RespuestaSQLServerDaoImpl()
+        {
+            // Cadena de conexión para SQL Server con autenticación de Windows
+            cadenaConexion = $"Data Source={servidor};Initial Catalog={baseDatos};Integrated Security=True;";
+        }
 
         public Respuesta Agregar(Respuesta nueva, Encuesta aDondePertenece)
         {
-            #region parámetros
-            string servidor = "TSP";
-            string baseDatos = "db_encuestas";
-            #endregion
-
-            // Cadena de conexión para SQL Server con autenticación de Windows
-            string cadenaConexion = $"Data Source={servidor};Initial Catalog={baseDatos};Integrated Security=True;";
-
-            SqlConnection conn = new SqlConnection(cadenaConexion);
+            SqlConnection conn =null;
             try
             {
+                conn = new SqlConnection(cadenaConexion);
                 conn.Open();
 
                 string sql = @"
@@ -66,9 +70,9 @@ values (@email, @usaBicicleta, @camina, @usaTransportePublico, @usaTransportePri
             return nueva;
         }
 
-        public Respuesta Actualizar(Respuesta Nuevo)
+        public void Actualizar(Respuesta Nuevo)
         {
-            throw new NotImplementedException();
+            //
         }
 
         public void Eliminar(int id)

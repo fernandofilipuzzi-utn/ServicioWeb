@@ -28,15 +28,14 @@ namespace EncuestaServicio.Services
             encuestaDAO.Agregar(nueva);
         }
 
-        public void CerrarEncuesta()
+        public void CerrarEncuesta(Encuesta encuestaEnCurso)
         {
-            /*ajustes de modelo hay que arreglar -> podría ser que el cierre se haga en todas las abiertas
-            if (EncuestaEnCurso != null)
+            if (encuestaEnCurso != null)
             {
-                EncuestaEnCurso.ActualizarEstadistica();
-                encuestaDAO.Actualizar(EncuestaEnCurso);
+                encuestaEnCurso.ActualizarEstadistica();
+                encuestaEnCurso.EnCurso = false;
+                encuestaDAO.Actualizar(encuestaEnCurso);
             }
-            */
         }
 
         public void RegistrarRespuesta(Respuesta nuevo, Encuesta aDonde)

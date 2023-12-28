@@ -34,16 +34,17 @@ namespace EncuestaAppTest
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbUsaBicicleta = new System.Windows.Forms.CheckBox();
-            this.cbCaminando = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.chbTransportePrivado = new System.Windows.Forms.CheckBox();
+            this.chbUsaTransportePublico = new System.Windows.Forms.CheckBox();
+            this.chbCaminando = new System.Windows.Forms.CheckBox();
+            this.chbUsaBicicleta = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbDistanciaASuLugar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cbLocalidad = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -53,25 +54,28 @@ namespace EncuestaAppTest
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Location = new System.Drawing.Point(113, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Email";
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(44, 26);
+            this.tbEmail.Location = new System.Drawing.Point(177, 32);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(337, 20);
+            this.tbEmail.Size = new System.Drawing.Size(329, 22);
             this.tbEmail.TabIndex = 7;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(156, 301);
+            this.button1.Location = new System.Drawing.Point(193, 358);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.Size = new System.Drawing.Size(165, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "Registrar Respuesta";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,90 +84,103 @@ namespace EncuestaAppTest
             // 
             this.groupBox1.Controls.Add(this.tbEmail);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 86);
+            this.groupBox1.Location = new System.Drawing.Point(16, 96);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 60);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(516, 74);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos personales";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.cbCaminando);
-            this.groupBox2.Controls.Add(this.cbUsaBicicleta);
-            this.groupBox2.Location = new System.Drawing.Point(23, 152);
+            this.groupBox2.Controls.Add(this.chbTransportePrivado);
+            this.groupBox2.Controls.Add(this.chbUsaTransportePublico);
+            this.groupBox2.Controls.Add(this.chbCaminando);
+            this.groupBox2.Controls.Add(this.chbUsaBicicleta);
+            this.groupBox2.Location = new System.Drawing.Point(16, 177);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(387, 75);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(516, 92);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "¿Qué medio de transporte usa más frecuentemente? (tilde una o mas opciones)";
             // 
-            // cbUsaBicicleta
+            // chbTransportePrivado
             // 
-            this.cbUsaBicicleta.AutoSize = true;
-            this.cbUsaBicicleta.Location = new System.Drawing.Point(38, 27);
-            this.cbUsaBicicleta.Name = "cbUsaBicicleta";
-            this.cbUsaBicicleta.Size = new System.Drawing.Size(100, 17);
-            this.cbUsaBicicleta.TabIndex = 0;
-            this.cbUsaBicicleta.Text = "¿Usa Bicicleta?";
-            this.cbUsaBicicleta.UseVisualStyleBackColor = true;
+            this.chbTransportePrivado.AutoSize = true;
+            this.chbTransportePrivado.Location = new System.Drawing.Point(224, 59);
+            this.chbTransportePrivado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbTransportePrivado.Name = "chbTransportePrivado";
+            this.chbTransportePrivado.Size = new System.Drawing.Size(263, 20);
+            this.chbTransportePrivado.TabIndex = 3;
+            this.chbTransportePrivado.Text = "¿Otro medio persona? (Motocicleta, etc)";
+            this.chbTransportePrivado.UseVisualStyleBackColor = true;
             // 
-            // cbCaminando
+            // chbUsaTransportePublico
             // 
-            this.cbCaminando.AutoSize = true;
-            this.cbCaminando.Location = new System.Drawing.Point(38, 48);
-            this.cbCaminando.Name = "cbCaminando";
-            this.cbCaminando.Size = new System.Drawing.Size(79, 17);
-            this.cbCaminando.TabIndex = 1;
-            this.cbCaminando.Text = "Caminando";
-            this.cbCaminando.UseVisualStyleBackColor = true;
+            this.chbUsaTransportePublico.AutoSize = true;
+            this.chbUsaTransportePublico.Location = new System.Drawing.Point(224, 31);
+            this.chbUsaTransportePublico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbUsaTransportePublico.Name = "chbUsaTransportePublico";
+            this.chbUsaTransportePublico.Size = new System.Drawing.Size(176, 20);
+            this.chbUsaTransportePublico.TabIndex = 2;
+            this.chbUsaTransportePublico.Text = "¿Usa transporte Público?";
+            this.chbUsaTransportePublico.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chbCaminando
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(168, 25);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(145, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "¿Usa transporte Público?";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chbCaminando.AutoSize = true;
+            this.chbCaminando.Location = new System.Drawing.Point(51, 59);
+            this.chbCaminando.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbCaminando.Name = "chbCaminando";
+            this.chbCaminando.Size = new System.Drawing.Size(95, 20);
+            this.chbCaminando.TabIndex = 1;
+            this.chbCaminando.Text = "Caminando";
+            this.chbCaminando.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chbUsaBicicleta
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(168, 48);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(215, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "¿Otro medio persona? (Motocicleta, etc)";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chbUsaBicicleta.AutoSize = true;
+            this.chbUsaBicicleta.Location = new System.Drawing.Point(51, 33);
+            this.chbUsaBicicleta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbUsaBicicleta.Name = "chbUsaBicicleta";
+            this.chbUsaBicicleta.Size = new System.Drawing.Size(119, 20);
+            this.chbUsaBicicleta.TabIndex = 0;
+            this.chbUsaBicicleta.Text = "¿Usa Bicicleta?";
+            this.chbUsaBicicleta.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.tbDistanciaASuLugar);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(23, 233);
+            this.groupBox3.Location = new System.Drawing.Point(16, 277);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(387, 60);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(516, 74);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos personales";
+            this.groupBox3.Text = "Datos del lugar de interés";
             // 
             // tbDistanciaASuLugar
             // 
-            this.tbDistanciaASuLugar.Location = new System.Drawing.Point(106, 26);
+            this.tbDistanciaASuLugar.Location = new System.Drawing.Point(177, 32);
+            this.tbDistanciaASuLugar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbDistanciaASuLugar.Name = "tbDistanciaASuLugar";
-            this.tbDistanciaASuLugar.Size = new System.Drawing.Size(275, 20);
+            this.tbDistanciaASuLugar.Size = new System.Drawing.Size(131, 22);
             this.tbDistanciaASuLugar.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 26);
+            this.label2.Location = new System.Drawing.Point(88, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Distancia";
             // 
@@ -171,41 +188,60 @@ namespace EncuestaAppTest
             // 
             this.groupBox4.Controls.Add(this.cbLocalidad);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(23, 20);
+            this.groupBox4.Location = new System.Drawing.Point(16, 15);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(387, 60);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(516, 74);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos personales";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Localidad con encuesta";
-            // 
             // cbLocalidad
             // 
             this.cbLocalidad.FormattingEnabled = true;
-            this.cbLocalidad.Location = new System.Drawing.Point(133, 23);
+            this.cbLocalidad.Location = new System.Drawing.Point(177, 28);
+            this.cbLocalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbLocalidad.Name = "cbLocalidad";
-            this.cbLocalidad.Size = new System.Drawing.Size(250, 21);
+            this.cbLocalidad.Size = new System.Drawing.Size(332, 24);
             this.cbLocalidad.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Localidad con encuesta";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(317, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "(Km)";
             // 
             // FormFormularioEncuesta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 336);
+            this.ClientSize = new System.Drawing.Size(543, 400);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "FormFormularioEncuesta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormFormularioEncuesta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -225,15 +261,16 @@ namespace EncuestaAppTest
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox cbCaminando;
-        private System.Windows.Forms.CheckBox cbUsaBicicleta;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.TextBox tbDistanciaASuLugar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox4;
         public System.Windows.Forms.ComboBox cbLocalidad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.CheckBox chbTransportePrivado;
+        public System.Windows.Forms.CheckBox chbUsaTransportePublico;
+        public System.Windows.Forms.CheckBox chbCaminando;
+        public System.Windows.Forms.CheckBox chbUsaBicicleta;
     }
 }

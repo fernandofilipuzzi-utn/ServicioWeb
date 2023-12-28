@@ -62,6 +62,7 @@ namespace EncuestaAppTest
             this.btnCerrarEncuesta.TabIndex = 2;
             this.btnCerrarEncuesta.Text = "Cerrar Encuesta";
             this.btnCerrarEncuesta.UseVisualStyleBackColor = true;
+            this.btnCerrarEncuesta.Click += new System.EventHandler(this.btnCerrarEncuesta_Click);
             // 
             // FormPrincipal
             // 
@@ -72,6 +73,7 @@ namespace EncuestaAppTest
             this.Controls.Add(this.btnRegistrarEncuesta);
             this.Controls.Add(this.btnIniciarEncuesta);
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mi ministerio de transporte";
             this.ResumeLayout(false);
 

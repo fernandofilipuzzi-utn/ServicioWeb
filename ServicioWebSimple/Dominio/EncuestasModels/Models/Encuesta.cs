@@ -58,12 +58,11 @@ namespace EncuestasModels.Models
             }
             if (CantidadEncuestados > 0)
             {
-
                 PorcBicleta = 100d * bicicletas / CantidadEncuestados;
                 PorcCaminando = 100d * caminantes / CantidadEncuestados;
                 PorcTransportePublico = 100d * transportePublico / CantidadEncuestados;
                 PorcTransportePrivado = 100d * transportePrivado / CantidadEncuestados;
-                DistanciaMedia =distanciaTotal / CantidadEncuestados;
+                DistanciaMedia = distanciaTotal / CantidadEncuestados;
             }
         }
 

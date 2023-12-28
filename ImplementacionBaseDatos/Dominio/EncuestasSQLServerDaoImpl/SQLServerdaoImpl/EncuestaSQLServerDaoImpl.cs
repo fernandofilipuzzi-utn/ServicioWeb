@@ -21,19 +21,76 @@ namespace EncuestasSQLServerDaoImpl.SQLServerdaoImpl
 
         public EncuestaSQLServerDaoImpl()
         {
+            // Cadena de conexión para SQL Server con autenticación de Windows
             cadenaConexion = $"Data Source={servidor};Initial Catalog={baseDatos};Integrated Security=True;";
         }
 
-        public Encuesta Actualizar(Encuesta actual)
+        public void Actualizar(Encuesta actual)
         {
-            return actual;
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = @"
+update encuestas 
+set anio=@anio, 
+        localidad=@localidad, 
+        porc_bicicleta=@porcBicleta, 
+        porc_caminando=@porcCaminando, 
+        porc_transporte_publico=@porcTransportePublico,
+        porc_transporte_privado=@porcTransportePrivado,
+        distancia_media=@distanciaMedia,
+        en_curso=@enCurso  
+where id=@id";
+
+                int rowsaffected = 0;
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    query.Parameters.Add(new SqlParameter("anio", SqlDbType.Int));
+                    query.Parameters.Add(new SqlParameter("localidad", SqlDbType.VarChar));
+                    query.Parameters.Add(new SqlParameter("porcBicleta", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("porcCaminando", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("porcTransportePublico", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("porcTransportePrivado", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("distanciaMedia", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("enCurso", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("id", SqlDbType.Int));
+                    //
+                    query.Parameters["anio"].Value = actual.Anio;
+                    query.Parameters["localidad"].Value = actual.Localidad;
+                    query.Parameters["porcBicleta"].Value = actual.PorcBicleta;
+                    query.Parameters["porcCaminando"].Value = actual.PorcCaminando;
+                    query.Parameters["porcTransportePublico"].Value = actual.PorcTransportePublico;
+                    query.Parameters["porcTransportePrivado"].Value = actual.PorcTransportePrivado;
+                    query.Parameters["distanciaMedia"].Value = actual.DistanciaMedia;
+                    //
+                    query.Parameters["enCurso"].Value = actual.EnCurso;
+                    //
+                    query.Parameters["id"].Value = actual.Id;
+                    //
+                    rowsaffected += query.ExecuteNonQuery();
+                }
+
+                Console.WriteLine($"Fueron modificadas {rowsaffected} filas.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}\n{e.StackTrace.ToString()}");
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
         }
 
         public Encuesta Agregar(Encuesta nueva)
         {   
-            SqlConnection conn = new SqlConnection(cadenaConexion);
+            SqlConnection conn =null;
             try
             {
+                conn = new SqlConnection(cadenaConexion);
                 conn.Open();
 
                 string sql = @"

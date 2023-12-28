@@ -11,7 +11,7 @@ namespace EncuestasDAO.DAO
     public interface IEncuestaDAO
     {
         Encuesta Agregar(Encuesta Nuevo);
-        Encuesta Actualizar(Encuesta Nuevo);
+        void Actualizar(Encuesta Nuevo);
         void Eliminar(int id);
         //
         Encuesta BuscarPorId(int id);

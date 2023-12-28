@@ -10,7 +10,7 @@ namespace EncuestasDAO.DAO
     public interface IRespuestaDAO
     {
         Respuesta Agregar(Respuesta nueva,Encuesta aDondePertenece);
-        Respuesta Actualizar(Respuesta actual);
+        void Actualizar(Respuesta actual);
         void Eliminar(int id);
         Respuesta BuscarPorId(int id);
         List<Respuesta> BuscarTodos();
