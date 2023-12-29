@@ -1,5 +1,5 @@
 ﻿using EncuestasDAO.DAO;
-using EncuestasModels.Models;
+using EncuestasNuevoModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -113,9 +113,9 @@ values (@anio, @localidad, @enCurso)";
                     nueva.Id = id;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                throw ex;
             }
             finally
             {
@@ -231,7 +231,8 @@ where id=@Id";
 
         public List<Encuesta> BuscarTodos()
         {
-            return null;
+            List<Encuesta> encuestas = new List<Encuesta>();
+            return encuestas;
         }
 
         public List<Encuesta> BuscarUltimasEncuestaNoCerradas()
@@ -250,9 +251,9 @@ from encuestas
 where en_curso=1
 order by id asc";
 
-                using (var command = new SqlCommand(sql, conn))
+                using (var query = new SqlCommand(sql, conn))
                 {
-                    SqlDataReader dataReader = command.ExecuteReader();
+                    SqlDataReader dataReader = query.ExecuteReader();
                     while (dataReader.Read())
                     {
                         #region ID

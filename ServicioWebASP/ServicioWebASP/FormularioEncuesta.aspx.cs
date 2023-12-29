@@ -1,5 +1,5 @@
 ﻿using EncuestasDAO.DAO;
-using EncuestasModels.Models;
+using EncuestasNuevoModels.Models;
 using EncuestasSQLServerDaoImpl.SQLServerdaoImpl;
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,8 @@ namespace ServicioEncuestas
                 #endregion
 
                 manager.RegistrarRespuesta(nueva, selectedEncuesta);
-                Response.Redirect("Default.aspx");//vuelve al menú principal
+                //Response.Redirect("Default.aspx");//vuelve al menú principal
+                Response.Redirect("Default.aspx",false);//cuando da error por subproceso anulado
             }
             catch (Exception ex)
             {

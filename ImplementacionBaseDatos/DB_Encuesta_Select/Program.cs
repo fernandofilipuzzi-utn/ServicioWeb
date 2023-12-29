@@ -29,9 +29,9 @@ namespace DB_Encuesta_Select
 
                 string sql = "select id, anio, localidad from encuestas order by id asc";
 
-                using (var command = new SqlCommand(sql, conn))
+                using (var query = new SqlCommand(sql, conn))
                 {
-                    SqlDataReader dataReader = command.ExecuteReader();
+                    SqlDataReader dataReader = query.ExecuteReader();
                     while (dataReader.Read())
                     {
                 #region ID

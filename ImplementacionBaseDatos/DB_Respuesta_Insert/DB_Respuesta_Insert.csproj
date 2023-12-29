@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ServicioWebSimple\Dominio\EncuestasModels\EncuestasModels.csproj">
+    <ProjectReference Include="..\Dominio\EncuestasModels\EncuestasNuevoModels.csproj">
       <Project>{cf14c57a-404d-4834-8f03-2d0b6120a286}</Project>
-      <Name>EncuestasModels</Name>
+      <Name>EncuestasNuevoModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{B41D028F-FCED-4EAB-AC3B-917773D2EDA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasModels", "..\ServicioWebSimple\Dominio\EncuestasModels\EncuestasModels.csproj", "{CF14C57A-404D-4834-8F03-2D0B6120A286}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasDAO", "..\ImplementacionBaseDatos\Dominio\EncuestasDAO\EncuestasDAO.csproj", "{24F04221-1406-47B4-8DEB-8055F69B720A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestaServicio", "..\ImplementacionBaseDatos\Dominio\EncuestaServicio\EncuestaServicio.csproj", "{55701CF7-2994-46B1-B68D-B8C623154C8D}"
@@ -15,16 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLServerDaoImpl",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestas", "ServicioWebASP\ServicioEncuestas.csproj", "{5F014F74-57EC-4652-9E68-E9B96100865D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasNuevoModels", "..\ImplementacionBaseDatos\Dominio\EncuestasModels\EncuestasNuevoModels.csproj", "{CF14C57A-404D-4834-8F03-2D0B6120A286}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24F04221-1406-47B4-8DEB-8055F69B720A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24F04221-1406-47B4-8DEB-8055F69B720A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F04221-1406-47B4-8DEB-8055F69B720A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,15 +37,19 @@ Global
 		{5F014F74-57EC-4652-9E68-E9B96100865D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F014F74-57EC-4652-9E68-E9B96100865D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F014F74-57EC-4652-9E68-E9B96100865D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CF14C57A-404D-4834-8F03-2D0B6120A286} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{24F04221-1406-47B4-8DEB-8055F69B720A} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{55701CF7-2994-46B1-B68D-B8C623154C8D} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{BA2DD45F-E7E2-4D69-98DF-1E725DB387D5} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
+		{CF14C57A-404D-4834-8F03-2D0B6120A286} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E74AFCEE-393C-4347-BF7A-ECABD0EA6820}

@@ -33,9 +33,9 @@ from encuestas
 where en_curso=true
 order by id asc";
 
-                using (var command = new SqlCommand(sql, conn))
+                using (var query = new SqlCommand(sql, conn))
                 {
-                    SqlDataReader dataReader = command.ExecuteReader();
+                    SqlDataReader dataReader = query.ExecuteReader();
                     while (dataReader.Read())
                     {
                         #region ID

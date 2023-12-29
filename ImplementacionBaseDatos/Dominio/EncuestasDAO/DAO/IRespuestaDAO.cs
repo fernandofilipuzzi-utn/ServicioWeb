@@ -1,4 +1,4 @@
-﻿using EncuestasModels.Models;
+﻿using EncuestasNuevoModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,6 @@ namespace EncuestasDAO.DAO
         void Eliminar(int id);
         Respuesta BuscarPorId(int id);
         List<Respuesta> BuscarTodos();
-
+        List<Respuesta> BuscarPorIdEncuesta(int idEncuesta);
     }
 }

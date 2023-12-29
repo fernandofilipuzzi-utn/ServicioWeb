@@ -1,5 +1,5 @@
 ﻿using EncuestasDAO.DAO;
-using EncuestasModels.Models;
+using EncuestasNuevoModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -87,7 +87,99 @@ values (@email, @usaBicicleta, @camina, @usaTransportePublico, @usaTransportePri
 
         public List<Respuesta> BuscarTodos()
         {
-            return null;
+            List<Respuesta> respuestas = new List<Respuesta>();
+            return respuestas;
+        }
+
+        public List<Respuesta> BuscarPorIdEncuesta(int idEncuesta)
+        {
+            List<Respuesta> respuestas = new List<Respuesta>();
+
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = @"
+select id, email, 
+        usa_bicicleta, camina, usa_transporte_publico, 
+        usa_transporte_privado, distancia_a_su_destino, 
+        id_encuesta
+from respuestas 
+where id_encuesta=@IdEncuesta
+order by id asc";
+
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    query.Parameters.Add(new SqlParameter("IdEncuesta", SqlDbType.Int));
+                    query.Parameters["IdEncuesta"].Value = idEncuesta;
+
+                    SqlDataReader dataReader = query.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        #region ID
+                        int id = 0;
+                        if (dataReader["id"] != DBNull.Value)
+                            id = (int)dataReader["id"];
+                        #endregion
+
+                        #region email
+                        string email = "";
+                        if (dataReader["email"] != DBNull.Value)
+                            email = dataReader["email"].ToString();
+                        #endregion
+
+                        #region usa bicicleta
+                        bool usaBicicleta = false;
+                        if (dataReader["usa_bicicleta"] != DBNull.Value)
+                            usaBicicleta = Convert.ToBoolean(dataReader["usa_bicicleta"]);
+                        #endregion
+
+                        #region camina
+                        bool camina = false;
+                        if (dataReader["camina"] != DBNull.Value)
+                            usaBicicleta = Convert.ToBoolean(dataReader["usa_bicicleta"]);
+                        #endregion
+
+                        #region usa trasnporte public
+                        bool usaTransportePublico = false;
+                        if (dataReader["usa_transporte_publico"] != DBNull.Value)
+                            usaTransportePublico = Convert.ToBoolean(dataReader["usa_transporte_publico"]);
+                        #endregion
+
+                        #region usa trasnporte privado
+                        bool usaTransportePrivado = false;
+                        if (dataReader["usa_transporte_privado"] != DBNull.Value)
+                            usaTransportePrivado = Convert.ToBoolean(dataReader["usa_transporte_privado"]);
+                        #endregion
+
+                        #region distancia a su destino
+                        double distanciaASuDestino = 0;
+                        if (dataReader["distancia_a_su_destino"] != DBNull.Value)
+                            distanciaASuDestino = Convert.ToDouble(dataReader["distancia_a_su_destino"]);
+                        #endregion
+
+                        #region id_encuesta
+                        int id_encuesta = 0;
+                        if (dataReader["id_encuesta"] != DBNull.Value)
+                            id_encuesta = Convert.ToInt32( dataReader["id_encuesta"]) ;
+                        #endregion
+
+                        Respuesta respuesta = new Respuesta { Id = id, Email=email, UsaBicicleta=usaBicicleta, Camina=camina, UsaTransportePublico=usaTransportePublico, UsaTransportePrivado=usaTransportePrivado, DistanciaASuDestino=distanciaASuDestino};
+                        respuestas.Add(respuesta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+            return respuestas;
         }
     }
 }

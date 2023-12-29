@@ -1,5 +1,5 @@
 ﻿using EncuestasDAO.DAO;
-using EncuestasModels.Models;
+using EncuestasNuevoModels.Models;
 using EncuestasSQLServerDaoImpl.SQLServerdaoImpl;
 using System;
 using System.Collections.Generic;
@@ -32,9 +32,53 @@ namespace EncuestaServicio.Services
         {
             if (encuestaEnCurso != null)
             {
-                encuestaEnCurso.ActualizarEstadistica();
+                //encuestaEnCurso.ActualizarEstadistica();
+                ActualizarEstadistica(encuestaEnCurso);
                 encuestaEnCurso.EnCurso = false;
                 encuestaDAO.Actualizar(encuestaEnCurso);
+            }
+        }
+
+        public void ActualizarEstadistica(Encuesta encuesta)
+        {
+            List<Respuesta> respuestas = respuestaDAO.BuscarPorIdEncuesta(encuesta.Id);
+
+            int bicicletas = 0;
+            int caminantes = 0;
+            int transportePublico = 0;
+            int transportePrivado = 0;
+
+            double distanciaTotal = 0;
+            foreach (Respuesta respuesta in respuestas)
+            {
+                if (respuesta.UsaBicicleta)
+                    bicicletas++;
+                if (respuesta.Camina)
+                    caminantes++;
+                if (respuesta.UsaTransportePublico)
+                    transportePublico++;
+                if (respuesta.UsaTransportePrivado)
+                    transportePrivado++;
+
+                distanciaTotal += respuesta.DistanciaASuDestino;
+            }
+            encuesta.respuestas.AddRange(respuestas);//?parche!!!
+            
+            // encuesta.CantidadEncuestados = respuestas.Count;
+
+            // if (encuesta.CantidadEncuestados > 0)
+            encuesta.PorcBicleta = 0;
+            encuesta.PorcCaminando = 0;
+            encuesta.PorcTransportePublico = 0;
+            encuesta.PorcTransportePrivado = 0;
+            encuesta.DistanciaMedia = 0;
+            if (respuestas.Count > 0)
+            {
+                encuesta.PorcBicleta = 100d * bicicletas / encuesta.CantidadEncuestados;
+                encuesta.PorcCaminando = 100d * caminantes / encuesta.CantidadEncuestados;
+                encuesta.PorcTransportePublico = 100d * transportePublico / encuesta.CantidadEncuestados;
+                encuesta.PorcTransportePrivado = 100d * transportePrivado / encuesta.CantidadEncuestados;
+                encuesta.DistanciaMedia = distanciaTotal / encuesta.CantidadEncuestados;
             }
         }
 
