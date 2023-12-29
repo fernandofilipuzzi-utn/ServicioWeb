@@ -20,24 +20,24 @@
             <div class="form-group">
                 <label for="tbEmail">Email: </label>
                 <asp:TextBox ID="tbEmail" class="form-control" type="email" name="tbEmail" runat="server" />
+                <!--validador-->
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="tbEmail" InitialValue="" ErrorMessage="Debe completar con su correo electrónico." ForeColor="Red" Display="Dynamic" />
             </div>
 
             <div class="form-group">
                 <label for="cbLocalidad">Elija la Localidad a la que pertence: </label>
-                <asp:DropDownList ID="cbLocalidad"
-                    class="form-control"
-                    name="tbDistancia"
-                    DataTextField="Localidad"
-                    DataValueField="Id"
-                    runat="server" />
-            </div>
+                <asp:DropDownList ID="cbLocalidad" class="form-control" name="tbDistancia" DataTextField="Localidad" DataValueField="Id" runat="server" />
+                <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="cbLocalidad" InitialValue="" ErrorMessage="Debe completar con la localidad a la que pertence." ForeColor="Red" Display="Dynamic" />
+            </div>            
         </div>
 
-        <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
+        <div class="col validation-container p-3 mb-3" style="background-color: #d6e1ed;">
             <h4>¿Qué medio de transporte usa con mayor frecuencia?. Tilde una o más opciones</h4>
 
+
+
             <div class="form-inline">
-                <asp:CheckBox ID="ckbUsaBicicleta" class="form-control" name="ckbUsaBicicleta" type="checkbox" value="1a" runat="server" />
+                <asp:CheckBox ID="ckbUsaBicicleta" class="form-control" name="ckbUsaBicicleta" type="checkbox" value="1" runat="server" />
                 <label for="ckbUsaBicicleta">Bicicleta</label>
             </div>
 
@@ -53,14 +53,16 @@
 
             <div class="form-inline">
                 <asp:CheckBox ID="ckbTransportePrivado" class="form-control" name="ckbTransportePrivado" value="1" runat="server" />
-                <label for="ckbTransportePrivado">Automóvil, Ciclomotor, etc</label>
+                <label for="ckbTransportePrivado">Automóvil, Ciclomotor, etc</label>                
             </div>
+            
         </div>
 
         <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
             <div class="form-group">
                 <label for="tbDistancia">Distancia al lugar de trabajo o estudio: </label>
                 <asp:TextBox ID="tbDistancia" name="tbDistancia" runat="server" />(km)
+                <asp:RequiredFieldValidator ID="rfvDistancia"  Enabled="true" runat="server" ControlToValidate="tbDistancia" InitialValue="" ErrorMessage="Debe completar el campo." ForeColor="Red" Display="Dynamic" />
             </div>
         </div>
 

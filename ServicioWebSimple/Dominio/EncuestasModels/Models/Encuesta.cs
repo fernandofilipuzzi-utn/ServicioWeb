@@ -56,6 +56,12 @@ namespace EncuestasModels.Models
 
                 distanciaTotal += respuesta.DistanciaASuDestino;
             }
+
+            PorcBicleta = 0;//la base permite definir valores por default
+            PorcCaminando = 0;
+            PorcTransportePublico = 0;
+            PorcTransportePrivado = 0;
+            DistanciaMedia = 0;
             if (CantidadEncuestados > 0)
             {
                 PorcBicleta = 100d * bicicletas / CantidadEncuestados;

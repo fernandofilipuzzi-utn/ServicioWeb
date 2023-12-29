@@ -37,7 +37,7 @@ namespace EncuestasSQLServerDaoImpl.SQLServerdaoImpl
 update encuestas 
 set anio=@anio, 
         localidad=@localidad, 
-        porc_bicicleta=@porcBicleta, 
+        porc_bicicleta=@porcBicicleta, 
         porc_caminando=@porcCaminando, 
         porc_transporte_publico=@porcTransportePublico,
         porc_transporte_privado=@porcTransportePrivado,
@@ -50,17 +50,17 @@ where id=@id";
                 {
                     query.Parameters.Add(new SqlParameter("anio", SqlDbType.Int));
                     query.Parameters.Add(new SqlParameter("localidad", SqlDbType.VarChar));
-                    query.Parameters.Add(new SqlParameter("porcBicleta", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("porcBicicleta", SqlDbType.Decimal));
                     query.Parameters.Add(new SqlParameter("porcCaminando", SqlDbType.Decimal));
                     query.Parameters.Add(new SqlParameter("porcTransportePublico", SqlDbType.Decimal));
                     query.Parameters.Add(new SqlParameter("porcTransportePrivado", SqlDbType.Decimal));
                     query.Parameters.Add(new SqlParameter("distanciaMedia", SqlDbType.Decimal));
-                    query.Parameters.Add(new SqlParameter("enCurso", SqlDbType.Decimal));
+                    query.Parameters.Add(new SqlParameter("enCurso", SqlDbType.Bit));
                     query.Parameters.Add(new SqlParameter("id", SqlDbType.Int));
                     //
                     query.Parameters["anio"].Value = actual.Anio;
                     query.Parameters["localidad"].Value = actual.Localidad;
-                    query.Parameters["porcBicleta"].Value = actual.PorcBicleta;
+                    query.Parameters["porcBicicleta"].Value = actual.PorcBicleta;
                     query.Parameters["porcCaminando"].Value = actual.PorcCaminando;
                     query.Parameters["porcTransportePublico"].Value = actual.PorcTransportePublico;
                     query.Parameters["porcTransportePrivado"].Value = actual.PorcTransportePrivado;
@@ -75,9 +75,9 @@ where id=@id";
 
                 Console.WriteLine($"Fueron modificadas {rowsaffected} filas.");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine($"{e.Message}\n{e.StackTrace.ToString()}");
+                throw ex;
             }
             finally
             {
@@ -142,7 +142,12 @@ values (@anio, @localidad, @enCurso)";
 
                 //agregar los campos que faltan
                 string sql = @"
-select id, anio, localidad, porc_bicicleta, porc_caminando, porc_transporte_publico, porc_transporte_privado, distancia_media, en_curso 
+select id, anio, localidad, 
+        porc_bicicleta, porc_caminando, 
+        porc_transporte_publico, 
+        porc_transporte_privado, 
+        distancia_media, 
+        en_curso 
 from encuestas 
 where id=@Id";
 
@@ -175,11 +180,25 @@ where id=@Id";
                         #endregion
 
                         #region porcentaje  bicicleta
-                        double? porcBicicleta = dataReader["porc_bicicleta"] as double?;
-                        double? porcCaminando = dataReader["porc_caminando"] as double?;
-                        double? porcTransportePublico = dataReader["porc_transporte_publico"] as double?;
-                        double? porcTransportePrivado = dataReader["porc_transporte_privado"] as double?;
-                        double? distanciaMedia = dataReader["distancia_media"] as double?;
+                        double? porcBicicleta = 0;
+                        if (dataReader["porc_bicicleta"] != DBNull.Value)
+                            porcBicicleta = Convert.ToDouble(dataReader["porc_bicicleta"]);
+
+                        double? porcCaminando = 0;
+                        if (dataReader["porc_caminando"] != DBNull.Value)
+                            porcCaminando = Convert.ToDouble(dataReader["porc_caminando"]);
+
+                        double? porcTransportePublico = 0;
+                        if (dataReader["porc_transporte_publico"] != DBNull.Value)
+                            porcTransportePublico = Convert.ToDouble(dataReader["porc_transporte_publico"]);
+
+                        double? porcTransportePrivado = 0;
+                        if (dataReader["porc_transporte_privado"] != DBNull.Value)
+                           porcTransportePrivado = Convert.ToDouble(dataReader["porc_transporte_privado"]);
+
+                        double? distanciaMedia = 0;
+                        if (dataReader["distancia_media"] != DBNull.Value)
+                             distanciaMedia = Convert.ToDouble(dataReader["distancia_media"]);
                         #endregion
 
                         #region actual!

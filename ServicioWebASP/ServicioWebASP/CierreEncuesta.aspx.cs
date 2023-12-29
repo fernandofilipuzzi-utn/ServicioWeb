@@ -36,6 +36,8 @@ namespace ServicioEncuestas
                 IEncuestaDAO encuestaDAO = new EncuestaSQLServerDaoImpl();
                 Encuesta selectedEncuesta = encuestaDAO.BuscarPorId(id);
 
+                ///hay que traer la lista de respuestas!
+
                 manager.CerrarEncuesta(selectedEncuesta);
 
                 Response.Redirect($"Resultados.aspx?idEncuestaCerrada={selectedEncuesta.Id}");

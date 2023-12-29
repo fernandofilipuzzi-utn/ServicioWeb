@@ -16,13 +16,26 @@ namespace ServicioEncuestas
         {
             if (IsPostBack == false)
             {
-                int id = Convert.ToInt32(Request["idEncuestaCerrada"]);
 
-                IEncuestaDAO encuestaDAO = new EncuestaSQLServerDaoImpl();
-                Encuesta selectedEncuesta = encuestaDAO.BuscarPorId(id);
+                if (string.IsNullOrEmpty(Request["idEncuestaCerrada"]) == false)
+                {
+                    int id = Convert.ToInt32(Request["idEncuestaCerrada"]);
 
-                lbAnio.Text = selectedEncuesta.Anio.ToString();
-                lbLocalidad.Text = selectedEncuesta.Localidad;
+                    IEncuestaDAO encuestaDAO = new EncuestaSQLServerDaoImpl();
+                    Encuesta selectedEncuesta = encuestaDAO.BuscarPorId(id);
+
+                    lbAnio.Text = selectedEncuesta.Anio.ToString();
+                    lbLocalidad.Text = selectedEncuesta.Localidad;
+
+                    lbCantidadEncuestados.Text = selectedEncuesta.CantidadEncuestados.ToString();
+
+                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicleta}";
+                    lbPorcCaminando.Text = $"{selectedEncuesta.PorcCaminando}";
+                    lbPorcTransportePublico.Text = $"{selectedEncuesta.PorcTransportePublico}";
+                    lbPorcTransportePrivado.Text = $"{selectedEncuesta.PorcTransportePrivado}";
+
+                    lbDistancia.Text = $"{selectedEncuesta.DistanciaMedia}";
+                }
 
             }
         }
