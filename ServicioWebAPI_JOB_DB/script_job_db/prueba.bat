@@ -1,0 +1,1 @@
+echo %time% > "F:\repos\repos_sqlserver\jobs\salida.txt"

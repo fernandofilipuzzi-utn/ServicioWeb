@@ -39,6 +39,16 @@ namespace EncuestaServicio.Services
             }
         }
 
+        public void ActualizarEstadisticasEnCurso()
+        {
+            List<Encuesta> encuestas = encuestaDAO.BuscarUltimasEncuestaNoCerradas();
+            foreach (Encuesta encuesta in encuestas)
+            {
+                ActualizarEstadistica(encuesta);
+                encuestaDAO.Actualizar(encuesta);
+            }
+        }
+
         public void ActualizarEstadistica(Encuesta encuesta)
         {
             List<Respuesta> respuestas = respuestaDAO.BuscarPorIdEncuesta(encuesta.Id);

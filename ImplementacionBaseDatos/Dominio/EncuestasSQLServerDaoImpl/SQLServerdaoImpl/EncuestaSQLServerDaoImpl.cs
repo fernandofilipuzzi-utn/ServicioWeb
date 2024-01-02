@@ -232,12 +232,66 @@ where id=@Id";
         public List<Encuesta> BuscarTodos()
         {
             List<Encuesta> encuestas = new List<Encuesta>();
+
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = @"
+select id, anio, localidad, en_curso 
+from encuestas 
+order by id asc";
+
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    SqlDataReader dataReader = query.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        #region ID
+                        int id = 0;
+                        if (dataReader["id"] != DBNull.Value)
+                            id = (int)dataReader["id"];
+                        #endregion
+
+                        #region nombre
+                        int anio = 0;
+                        if (dataReader["anio"] != DBNull.Value)
+                            anio = Convert.ToInt32(dataReader["anio"]);
+                        #endregion
+
+                        #region localidad
+                        string localidad = "";
+                        if (dataReader["localidad"] != DBNull.Value)
+                            localidad = dataReader["localidad"] as string;
+                        #endregion
+
+                        #region actual!
+                        bool enCurso = false;
+                        if (dataReader["en_curso"] != DBNull.Value)
+                            enCurso = (bool)dataReader["en_curso"];
+                        #endregion
+
+                        Encuesta encuesta = new Encuesta { Id = id, Localidad = localidad, Anio = anio, EnCurso = enCurso };
+                        encuestas.Add(encuesta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
             return encuestas;
         }
 
         public List<Encuesta> BuscarUltimasEncuestaNoCerradas()
         {
-            List<Encuesta> encuestasActivasLoclidades = new List<Encuesta>();
+            List<Encuesta> encuestasActivasLocalidades = new List<Encuesta>();
 
             SqlConnection conn = null;
             try
@@ -281,7 +335,7 @@ order by id asc";
                         #endregion
 
                         Encuesta encuesta = new Encuesta { Id = id, Localidad = localidad, Anio = anio , EnCurso=enCurso};
-                        encuestasActivasLoclidades.Add(encuesta);
+                        encuestasActivasLocalidades.Add(encuesta);
                     }
                 }
             }
@@ -293,7 +347,7 @@ order by id asc";
             {
                 if (conn != null) conn.Close();
             }
-            return encuestasActivasLoclidades;
+            return encuestasActivasLocalidades;
         }
     }
 }
