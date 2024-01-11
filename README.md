@@ -19,6 +19,7 @@ En este respositorio se desarrollan una seríe de temas a modo introducción a t
 <details open>
         <summary>Resumen.</summary>
 1- Ejemplos de ejecución de queries sencillos desde aplicaciones de consola
+        
 2- Luego, apartir de esto se desarrolla el modelo de capas utilizando principalmente el patron dao -
         
 <div align="center">
