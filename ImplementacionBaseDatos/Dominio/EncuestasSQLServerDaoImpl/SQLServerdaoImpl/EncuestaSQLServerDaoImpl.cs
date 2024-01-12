@@ -349,5 +349,37 @@ order by id asc";
             }
             return encuestasActivasLocalidades;
         }
+
+
+        public DataSet ListarEncuestas()
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = null;
+
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = "SELECT id, anio, localidad FROM encuestas";
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    using (var adapter = new SqlDataAdapter(query))
+                    {
+                        adapter.Fill(ds);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+
+            return ds;
+        }
     }
 }

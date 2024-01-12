@@ -16,7 +16,8 @@ namespace EncuestasDAO.DAO
         //
         Encuesta BuscarPorId(int id);
         List<Encuesta> BuscarTodos();
-
+        //
         List<Encuesta> BuscarUltimasEncuestaNoCerradas();
+        //
     }
 }

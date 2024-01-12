@@ -1,6 +1,7 @@
 ﻿using EncuestasDAO.DAO;
 using EncuestasNuevoModels.Models;
 using EncuestasSQLiteDaoImpl.SQLiteDaoImpl;
+using EncuestasSQLServerDaoImpl.SQLServerDaoImpl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,12 +23,13 @@ namespace EncuestaServicio.Services
 
         public EncuestaManager()
         {
-            /* inyección por constructor
+            /* inyección por constructor*/
              encuestaDAO  = new EncuestaSQLServerDaoImpl();
             respuestaDAO =new RespuestaSQLServerDaoImpl();
-             */
+           /*
             encuestaDAO = new EncuestaSQLiteDaoImpl();
             respuestaDAO = new RespuestaSQLiteDaoImpl();
+            */
         }
 
         public EncuestaManager(string pathSQLite)

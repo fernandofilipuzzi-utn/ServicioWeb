@@ -17,12 +17,13 @@ namespace ServicioEncuestas
 
         protected void btnIniciarEncuesta_Click(object sender, EventArgs e)
         {
-            string rutaSQLite = Path.Combine( Server.MapPath("~"), "db_encuestas.db");
-
-            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
+            //hay que buscar un mecanismo para configurar la implementación de dao en el web.config
+            //para sqlite
+            //string rutaSQLite = Path.Combine( Server.MapPath("~"), "db_encuestas.db");
+            //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
 
             //para sqlserver
-            //cuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
 
             int anio = Convert.ToInt32(tbANIO.Text);
             string localidad = tbLocalidad.Text;

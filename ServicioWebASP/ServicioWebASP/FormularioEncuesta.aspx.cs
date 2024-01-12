@@ -1,6 +1,7 @@
 ﻿using EncuestasDAO.DAO;
 using EncuestasNuevoModels.Models;
 using EncuestasSQLiteDaoImpl.SQLiteDaoImpl;
+using EncuestasSQLServerDaoImpl.SQLServerDaoImpl;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,11 +18,14 @@ namespace ServicioEncuestas
         {
             if (IsPostBack == false)
             {
-                string rutaSQLite = Path.Combine(Server.MapPath("~"), "db_encuestas.db");
-                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
+                //hay que buscar un mecanismo para configurar la implementación de dao en el web.config
+                //sqlite
+                //string rutaSQLite = Path.Combine(Server.MapPath("~"), "db_encuestas.db");
+                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
 
                 //para sqlserver
-                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
                 if (IsPostBack == false)
                 { //solo cuando se recargue la página
                     //cbLocalidad.Items.AddRange(manager.EncuestasEnCurso.ToArray<Encuesta>());
@@ -35,13 +39,15 @@ namespace ServicioEncuestas
         {
             try
             {
-                string rutaSQLite = Path.Combine(Server.MapPath("~"), "db_encuestas.db");
-                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
-                IEncuestaDAO encuestaDAO = new EncuestaSQLiteDaoImpl(rutaSQLite);
+                //hay que buscar un mecanismo para configurar la implementación de dao en el web.config
+                //sqlite
+                //string rutaSQLite = Path.Combine(Server.MapPath("~"), "db_encuestas.db");
+                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
+                //IEncuestaDAO encuestaDAO = new EncuestaSQLiteDaoImpl(rutaSQLite);
 
                 //para sqlserver
-                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
-                //IEncuestaDAO encuestaDAO = new EncuestaSQLServerDaoImpl();
+                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                IEncuestaDAO encuestaDAO = new EncuestaSQLServerDaoImpl();
 
                 #region parseo
                 string email = tbEmail.Text;
