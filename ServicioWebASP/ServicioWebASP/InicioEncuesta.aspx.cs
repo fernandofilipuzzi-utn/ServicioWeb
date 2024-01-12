@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,8 +17,13 @@ namespace ServicioEncuestas
 
         protected void btnIniciarEncuesta_Click(object sender, EventArgs e)
         {
-            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
-            
+            string rutaSQLite = Path.Combine( Server.MapPath("~"), "db_encuestas.db");
+
+            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
+
+            //para sqlserver
+            //cuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
             int anio = Convert.ToInt32(tbANIO.Text);
             string localidad = tbLocalidad.Text;
 

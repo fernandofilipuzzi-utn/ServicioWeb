@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55701CF7-2994-46B1-B68D-B8C623154C8D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EncuestaServicio</RootNamespace>
-    <AssemblyName>EncuestaServicio</AssemblyName>
+    <ProjectGuid>{DF9EE322-9204-47C2-998C-FD042530BCD2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SQLServer_Encuesta_Select_EnCurso</RootNamespace>
+    <AssemblyName>SQLServer_Encuesta_Select_EnCurso</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,36 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\EncuestaManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EncuestasDAO\EncuestasDAO.csproj">
-      <Project>{24f04221-1406-47b4-8deb-8055f69b720a}</Project>
-      <Name>EncuestasDAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EncuestasModels\EncuestasNuevoModels.csproj">
+    <ProjectReference Include="..\..\Dominio\EncuestasModels\EncuestasNuevoModels.csproj">
       <Project>{cf14c57a-404d-4834-8f03-2d0b6120a286}</Project>
       <Name>EncuestasNuevoModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EncuestasSQLiteDaoImpl\EncuestasSQLiteDaoImpl.csproj">
-      <Project>{9ef2535f-a49d-41cd-b126-2614831a55fb}</Project>
-      <Name>EncuestasSQLiteDaoImpl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EncuestasSQLServerDaoImpl\EncuestasSQLServerDaoImpl.csproj">
-      <Project>{ba2dd45f-e7e2-4d69-98df-1e725db387d5}</Project>
-      <Name>EncuestasSQLServerDaoImpl</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="uml\completo.uml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="uml\completo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
