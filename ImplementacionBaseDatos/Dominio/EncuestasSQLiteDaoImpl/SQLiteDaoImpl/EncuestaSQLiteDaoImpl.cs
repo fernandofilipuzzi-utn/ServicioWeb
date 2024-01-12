@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasSQLiteDaoImpl.SQLServerdaoImpl
+namespace EncuestasSQLiteDaoImpl.SQLiteDaoImpl
 {
     public class EncuestaSQLiteDaoImpl : IEncuestaDAO
     {

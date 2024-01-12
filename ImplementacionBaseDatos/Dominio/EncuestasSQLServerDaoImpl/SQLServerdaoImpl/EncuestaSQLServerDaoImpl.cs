@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncuestasSQLServerDaoImpl.SQLServerdaoImpl
+namespace EncuestasSQLServerDaoImpl.SQLServerDaoImpl
 {
     public class EncuestaSQLServerDaoImpl : IEncuestaDAO
     {

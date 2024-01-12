@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLServerdaoImpl\RespuestaSQLServerDaoImpl.cs" />
-    <Compile Include="SQLServerdaoImpl\EncuestaSQLServerDaoImpl.cs" />
+    <Compile Include="SQLServerDaoImpl\RespuestaSQLServerDaoImpl.cs" />
+    <Compile Include="SQLServerDaoImpl\EncuestaSQLServerDaoImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EncuestasDAO\EncuestasDAO.csproj">

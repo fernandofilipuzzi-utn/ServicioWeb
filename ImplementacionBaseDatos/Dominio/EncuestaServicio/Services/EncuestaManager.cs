@@ -1,6 +1,6 @@
 ﻿using EncuestasDAO.DAO;
 using EncuestasNuevoModels.Models;
-using EncuestasSQLiteDaoImpl.SQLServerdaoImpl;
+using EncuestasSQLiteDaoImpl.SQLiteDaoImpl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
