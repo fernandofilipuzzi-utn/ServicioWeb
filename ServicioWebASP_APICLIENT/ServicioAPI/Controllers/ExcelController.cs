@@ -13,12 +13,12 @@ namespace ServicioAPI.Controllers
     public class ExcelController : ApiController
     {
         [HttpPost]
-        public HttpResponseMessage GetExcel([FromUri] string token, [FromBody] DataTable dt)
+        public HttpResponseMessage GetExcel( [FromBody] DataTable dt)
         {
             HttpResponseMessage result = null;
             try
             {
-                if (string.IsNullOrWhiteSpace(token) == true)
+                if (dt==null)
                 {
                     return null;
                 }
