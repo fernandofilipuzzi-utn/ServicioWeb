@@ -1,37 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLServer_Encuesta_Select
+namespace SQLite_Encuesta_Select
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
-            #region parámetros
-            //string servidor = "TSP\\SQLEXPRESS";//para sql server express
-            string servidor = "TSP";
-            string baseDatos = "db_encuestas";
-            #endregion
-
-            // Cadena de conexión para SQL Server con autenticación de Windows
-            string cadenaConexion = $"Data Source={servidor};Initial Catalog={baseDatos};Integrated Security=True;";
-
-            SqlConnection conn = null;
+            string cadenaConexion = "Data Source=../../../db_encuestas.db;Version=3;";
+            SQLiteConnection conn = null;
             try
             {
-                conn = new SqlConnection(cadenaConexion);
+                conn = new SQLiteConnection(cadenaConexion);
                 conn.Open();
 
                 string sql = "select id, anio, localidad from encuestas order by id asc";
 
-                using (var query = new SqlCommand(sql, conn))
+                using (var query = new SQLiteCommand(sql, conn))
                 {
-                    SqlDataReader dataReader = query.ExecuteReader();
+                    SQLiteDataReader dataReader = query.ExecuteReader();
                     while (dataReader.Read())
                     {
                         #region ID

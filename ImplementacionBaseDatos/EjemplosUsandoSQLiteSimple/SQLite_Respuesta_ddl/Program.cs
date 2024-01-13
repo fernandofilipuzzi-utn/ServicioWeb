@@ -22,28 +22,25 @@ namespace SQLite_Encuesta_ddl
                 conn.Open();
 
                 string sql = @"
-CREATE TABLE IF NOT EXISTS encuestas (
+CREATE TABLE IF NOT EXISTS respuestas (
     id INTEGER PRIMARY KEY AUTOINCREMENT, 
-    anio INTEGER NOT NULL,
-    localidad TEXT NOT NULL,
-    porc_bicicleta REAL DEFAULT 0,
-    porc_caminando REAL DEFAULT 0,
-    porc_transporte_publico REAL DEFAULT 0,
-    porc_transporte_privado REAL DEFAULT 0,
-    distancia_media REAL DEFAULT 0,
-    en_curso INTEGER CHECK (en_curso IN (0, 1))
+    email TEXT NOT NULL,
+    usa_bicicleta INTEGER NOT NULL CHECK (usa_bicicleta IN (0, 1)),
+    camina INTEGER NOT NULL CHECK (camina IN (0, 1)),
+    usa_transporte_publico INTEGER NOT NULL CHECK (usa_transporte_publico IN (0, 1)),
+    usa_transporte_privado INTEGER NOT NULL CHECK (usa_transporte_privado IN (0, 1)),
+    distancia_a_su_destino REAL NOT NULL,
+    id_encuesta INTEGER 
 )";
 
                 using (var query = new SQLiteCommand(sql, conn))
                 {
                     query.ExecuteNonQuery();
                 }
-
-                Console.WriteLine("Finalizado con exito! ");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"{ex.Message}\n{ex.StackTrace.ToString()}");
             }
             finally
             {

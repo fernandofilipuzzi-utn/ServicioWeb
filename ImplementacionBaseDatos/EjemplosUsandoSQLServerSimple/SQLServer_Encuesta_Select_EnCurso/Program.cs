@@ -68,6 +68,8 @@ order by id asc";
             {
                 if (conn != null) conn.Close();
             }
+
+            Console.WriteLine("Presione una tecla para salir");
             Console.ReadKey();
         }
     }

@@ -75,6 +75,7 @@ where id=@id";
                 if (conn != null) conn.Close();
             }
 
+            Console.WriteLine("Presione una tecla para salir");
             Console.ReadKey();
         }
     }

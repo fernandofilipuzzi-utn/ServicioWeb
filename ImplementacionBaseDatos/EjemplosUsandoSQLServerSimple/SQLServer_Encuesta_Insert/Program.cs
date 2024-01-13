@@ -43,7 +43,7 @@ values (@anio, @localidad)";
                     query.Parameters["localidad"].Value = nueva.Localidad;
                     //
                     //rowsaffected += query.ExecuteNonQuery();
-                    Int32 id = (Int32)query.ExecuteScalar();
+                    Int32 id = Convert.ToInt32( query.ExecuteScalar());
                     nueva.Id = id;
                 }
 
@@ -58,6 +58,7 @@ values (@anio, @localidad)";
                 if (conn != null) conn.Close();
             }
 
+            Console.WriteLine("Presione una tecla para salir");
             Console.ReadKey();
         }
     }
