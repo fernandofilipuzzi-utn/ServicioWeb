@@ -14,7 +14,6 @@ namespace EncuestasSQLiteDaoImpl.SQLiteDaoImpl
     public class EncuestaSQLiteDaoImpl : IEncuestaDAO
     {
         
-
         string cadenaConexion = "";
 
         public EncuestaSQLiteDaoImpl()
@@ -78,10 +77,10 @@ CREATE TABLE IF NOT EXISTS encuestas (
                 conn = new SQLiteConnection(cadenaConexion);
                 conn.Open();
 
-                string sql = @"
+                string sql = $@"
 update encuestas 
 set anio=@anio, 
-        localidad=@localidad, 
+        localidad='{actual.Localidad}', 
         porc_bicicleta=@porcBicicleta, 
         porc_caminando=@porcCaminando, 
         porc_transporte_publico=@porcTransportePublico,
@@ -94,7 +93,7 @@ where id=@id";
                 using (var query = new SQLiteCommand(sql, conn))
                 {
                     query.Parameters.Add(new SQLiteParameter("anio", DbType.Int32));
-                    query.Parameters.Add(new SQLiteParameter("localidad", DbType.String));
+                   // query.Parameters.Add(new SQLiteParameter("localidad", DbType.String));
                     query.Parameters.Add(new SQLiteParameter("porcBicicleta", DbType.Double));
                     query.Parameters.Add(new SQLiteParameter("porcCaminando", DbType.Double));
                     query.Parameters.Add(new SQLiteParameter("porcTransportePublico", DbType.Double));
@@ -104,8 +103,8 @@ where id=@id";
                     query.Parameters.Add(new SQLiteParameter("id", actual.Id));
                     //
                     query.Parameters["anio"].Value = actual.Anio;
-                    query.Parameters["localidad"].Value = actual.Localidad;
-                    query.Parameters["porcBicicleta"].Value = actual.PorcBicleta;
+                    // query.Parameters["localidad"].Value = actual.Localidad; //parche: da error, en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal) en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info) sqllite text string
+                    query.Parameters["porcBicicleta"].Value = actual.PorcBicicleta;
                     query.Parameters["porcCaminando"].Value = actual.PorcCaminando;
                     query.Parameters["porcTransportePublico"].Value = actual.PorcTransportePublico;
                     query.Parameters["porcTransportePrivado"].Value = actual.PorcTransportePrivado;
@@ -251,7 +250,7 @@ where id=@Id";
                         #endregion
 
                         buscado = new Encuesta { Id = id, Localidad = localidad, Anio = anio, 
-                                                 PorcBicleta=porcBicicleta,
+                                                 PorcBicicleta=porcBicicleta,
                                                  PorcCaminando= porcCaminando,
                                                  PorcTransportePublico= porcTransportePublico,
                                                  PorcTransportePrivado= porcTransportePrivado,

@@ -18,6 +18,7 @@ namespace EncuestasSQLiteDaoImpl.SQLiteDaoImpl
         public RespuestaSQLiteDaoImpl(string path)
         {
             cadenaConexion = $"Data Source={path};Version=3;";
+            Inicializar();
         }
 
         public RespuestaSQLiteDaoImpl()

@@ -25,7 +25,7 @@ namespace SQLite_Encuesta_ddl
 CREATE TABLE IF NOT EXISTS encuestas (
     id INTEGER PRIMARY KEY AUTOINCREMENT, 
     anio INTEGER NOT NULL,
-    localidad TEXT NOT NULL,
+    localidad TEXT,
     porc_bicicleta REAL DEFAULT 0,
     porc_caminando REAL DEFAULT 0,
     porc_transporte_publico REAL DEFAULT 0,

@@ -18,13 +18,13 @@ namespace EncuestaServicio.Services
         IRespuestaDAO respuestaDAO { get; set; } = new RespuestaSQLServerDaoImpl();
         */
         /* sqlite*/
-        IEncuestaDAO encuestaDAO { get; set; } 
-        IRespuestaDAO respuestaDAO { get; set; } 
+        public IEncuestaDAO encuestaDAO { get; set; } 
+        public IRespuestaDAO respuestaDAO { get; set; } 
 
         public EncuestaManager()
         {
             /* inyección por constructor*/
-             encuestaDAO  = new EncuestaSQLServerDaoImpl();
+            encuestaDAO  = new EncuestaSQLServerDaoImpl();
             respuestaDAO =new RespuestaSQLServerDaoImpl();
            /*
             encuestaDAO = new EncuestaSQLiteDaoImpl();
@@ -96,19 +96,16 @@ namespace EncuestaServicio.Services
 
                 distanciaTotal += respuesta.DistanciaASuDestino;
             }
-            encuesta.respuestas.AddRange(respuestas);//?parche!!!
-            
-            // encuesta.CantidadEncuestados = respuestas.Count;
-
-            // if (encuesta.CantidadEncuestados > 0)
-            encuesta.PorcBicleta = 0;
+            encuesta.respuestas.AddRange(respuestas);
+            //
+            encuesta.PorcBicicleta = 0;
             encuesta.PorcCaminando = 0;
             encuesta.PorcTransportePublico = 0;
             encuesta.PorcTransportePrivado = 0;
             encuesta.DistanciaMedia = 0;
             if (respuestas.Count > 0)
             {
-                encuesta.PorcBicleta = 100d * bicicletas / encuesta.CantidadEncuestados;
+                encuesta.PorcBicicleta = 100d * bicicletas / encuesta.CantidadEncuestados;
                 encuesta.PorcCaminando = 100d * caminantes / encuesta.CantidadEncuestados;
                 encuesta.PorcTransportePublico = 100d * transportePublico / encuesta.CantidadEncuestados;
                 encuesta.PorcTransportePrivado = 100d * transportePrivado / encuesta.CantidadEncuestados;

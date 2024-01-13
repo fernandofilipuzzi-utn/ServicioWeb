@@ -25,7 +25,12 @@ namespace EncuestaAppTest
 
             try
             {
-                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                //sqlserver
+                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
+                //sqlite
+                string pathDBSqlite = "db_encuestas.db";
+                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(pathDBSqlite);
 
 
                 if (formInicio.ShowDialog() == DialogResult.OK)
@@ -46,9 +51,16 @@ namespace EncuestaAppTest
         {
             try
             {
-                FormFormularioEncuesta formRespuesta = new FormFormularioEncuesta();
-                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                //sqlserver
+                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
 
+                //sqlite
+                string pathDBSqlite = "db_encuestas.db";
+                EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(pathDBSqlite);
+
+
+                FormFormularioEncuesta formRespuesta = new FormFormularioEncuesta();
+                
                 formRespuesta.cbLocalidad.Items.AddRange(manager.EncuestasEnCurso.ToArray<Encuesta>());
 
                 if (formRespuesta.ShowDialog() == DialogResult.OK)
@@ -85,7 +97,13 @@ namespace EncuestaAppTest
         private void btnCerrarEncuesta_Click(object sender, EventArgs e)
         {
             FormCierreEncuesta formCierreEncuesta = new FormCierreEncuesta();
-            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
+            //sqlserver
+            //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
+            //sqlite
+            string pathDBSqlite = "db_encuestas.db";
+            EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(pathDBSqlite);
 
             formCierreEncuesta.cbLocalidad.Items.AddRange(manager.EncuestasEnCurso.ToArray<Encuesta>());
             try

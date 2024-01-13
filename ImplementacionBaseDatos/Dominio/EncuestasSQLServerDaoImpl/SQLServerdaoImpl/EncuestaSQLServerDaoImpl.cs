@@ -60,7 +60,7 @@ where id=@id";
                     //
                     query.Parameters["anio"].Value = actual.Anio;
                     query.Parameters["localidad"].Value = actual.Localidad;
-                    query.Parameters["porcBicicleta"].Value = actual.PorcBicleta;
+                    query.Parameters["porcBicicleta"].Value = actual.PorcBicicleta;
                     query.Parameters["porcCaminando"].Value = actual.PorcCaminando;
                     query.Parameters["porcTransportePublico"].Value = actual.PorcTransportePublico;
                     query.Parameters["porcTransportePrivado"].Value = actual.PorcTransportePrivado;
@@ -208,7 +208,7 @@ where id=@Id";
                         #endregion
 
                         buscado = new Encuesta { Id = id, Localidad = localidad, Anio = anio, 
-                                                 PorcBicleta=porcBicicleta,
+                                                 PorcBicicleta=porcBicicleta,
                                                  PorcCaminando= porcCaminando,
                                                  PorcTransportePublico= porcTransportePublico,
                                                  PorcTransportePrivado= porcTransportePrivado,

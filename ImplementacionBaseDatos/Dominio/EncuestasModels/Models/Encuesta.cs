@@ -14,7 +14,7 @@ namespace EncuestasNuevoModels.Models
         public int Anio { get; set; }
         public string Localidad { get; set; }
         //
-        public double? PorcBicleta { get; set; }
+        public double? PorcBicicleta { get; set; }
         public double? PorcCaminando { get; set; }
         public double? PorcTransportePublico { get; set; }
         public double? PorcTransportePrivado { get; set; }

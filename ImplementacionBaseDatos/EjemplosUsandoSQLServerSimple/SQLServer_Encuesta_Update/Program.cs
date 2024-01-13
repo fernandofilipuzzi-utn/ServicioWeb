@@ -14,7 +14,7 @@ namespace SQLServer_Encuesta_Update
         static void Main(string[] args)
         {
             //caso
-            Encuesta nueva = new Encuesta { Id=1, Anio = 2023, Localidad = "Paraná", PorcBicleta=0 };
+            Encuesta nueva = new Encuesta { Id=1, Anio = 2023, Localidad = "Paraná", PorcBicicleta=0 };
 
             #region parámetros
             string servidor = "TSP";
@@ -54,7 +54,7 @@ where id=@id";
                     //
                     query.Parameters["anio"].Value = nueva.Anio;
                     query.Parameters["localidad"].Value = nueva.Localidad;
-                    query.Parameters["porcBicleta"].Value = nueva.PorcBicleta;
+                    query.Parameters["porcBicleta"].Value = nueva.PorcBicicleta;
                     query.Parameters["porcCaminando"].Value = nueva.PorcCaminando;
                     query.Parameters["porcTransportePublico"].Value = nueva.PorcTransportePublico;
                     query.Parameters["porcTransportePrivado"].Value = nueva.PorcTransportePrivado;

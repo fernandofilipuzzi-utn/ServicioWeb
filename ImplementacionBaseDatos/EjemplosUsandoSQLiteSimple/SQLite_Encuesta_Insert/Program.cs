@@ -40,8 +40,6 @@ RETURNING id;";
                     query.Parameters["localidad"].Value = nueva.Localidad;
                     query.Parameters["enCurso"].Value = nueva.EnCurso ? 1 : 0;
 
-                    //
-                   //int  rowsaffected = query.ExecuteNonQuery();
                     object id = query.ExecuteScalar();
                     nueva.Id = Convert.ToInt32(id);
 
