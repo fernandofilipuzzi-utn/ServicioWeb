@@ -29,7 +29,7 @@ namespace ServicioEncuestas
 
                     lbCantidadEncuestados.Text = selectedEncuesta.CantidadEncuestados.ToString();
 
-                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicleta}";
+                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicicleta}";
                     lbPorcCaminando.Text = $"{selectedEncuesta.PorcCaminando}";
                     lbPorcTransportePublico.Text = $"{selectedEncuesta.PorcTransportePublico}";
                     lbPorcTransportePrivado.Text = $"{selectedEncuesta.PorcTransportePrivado}";

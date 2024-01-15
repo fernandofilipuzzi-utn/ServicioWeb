@@ -20,7 +20,12 @@ namespace ServicioAPI.Controllers
             {
                 if (dt==null)
                 {
-                    return null;
+                    var badRequestResponse = new HttpResponseMessage(HttpStatusCode.BadRequest)
+                    {
+                        Content = new StringContent("Los parámetros no son adecuados.")
+                    };
+
+                    return badRequestResponse;
                 }
 
                 #region generacion excel
