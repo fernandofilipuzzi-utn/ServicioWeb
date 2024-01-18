@@ -1,6 +1,6 @@
 ﻿using EncuestasDAO.DAO;
 using EncuestasNuevoModels.Models;
-using EncuestasSQLServerDaoImpl.SQLServerdaoImpl;
+using EncuestasSQLServerDaoImpl.SQLServerDaoImpl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace ServicioEncuestas
 
                     lbCantidadEncuestados.Text = selectedEncuesta.CantidadEncuestados.ToString();
 
-                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicleta}";
+                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicicleta}";
                     lbPorcCaminando.Text = $"{selectedEncuesta.PorcCaminando}";
                     lbPorcTransportePublico.Text = $"{selectedEncuesta.PorcTransportePublico}";
                     lbPorcTransportePrivado.Text = $"{selectedEncuesta.PorcTransportePrivado}";

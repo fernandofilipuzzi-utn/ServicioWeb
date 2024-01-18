@@ -1,8 +1,10 @@
 ﻿using EncuestasDAO.DAO;
 using EncuestasNuevoModels.Models;
+using EncuestasSQLiteDaoImpl.SQLiteDaoImpl;
 using EncuestasSQLServerDaoImpl.SQLServerDaoImpl;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,7 +18,14 @@ namespace ServicioEncuestas
         {
             if (IsPostBack == false)
             {
+                //hay que buscar un mecanismo para configurar la implementación de dao en el web.config
+                //sqlite
+                //string rutaSQLite = Path.Combine(Server.MapPath("~"), "db_encuestas.db");
+                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
+
+                //para sqlserver
                 EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+
                 if (IsPostBack == false)
                 { //solo cuando se recargue la página
                     //cbLocalidad.Items.AddRange(manager.EncuestasEnCurso.ToArray<Encuesta>());
@@ -30,7 +39,15 @@ namespace ServicioEncuestas
         {
             try
             {
+                //hay que buscar un mecanismo para configurar la implementación de dao en el web.config
+                //sqlite
+                //string rutaSQLite = Path.Combine(Server.MapPath("~"), "db_encuestas.db");
+                //EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager(rutaSQLite);
+                //IEncuestaDAO encuestaDAO = new EncuestaSQLiteDaoImpl(rutaSQLite);
+
+                //para sqlserver
                 EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
+                IEncuestaDAO encuestaDAO = new EncuestaSQLServerDaoImpl();
 
                 #region parseo
                 string email = tbEmail.Text;
@@ -41,7 +58,7 @@ namespace ServicioEncuestas
                 double distanciaASuDestino = Convert.ToDouble(tbDistancia.Text);
 
                 int id= Convert.ToInt32(cbLocalidad.SelectedValue);
-                IEncuestaDAO encuestaDAO  = new EncuestaSQLServerDaoImpl();
+                
                 Encuesta selectedEncuesta = encuestaDAO.BuscarPorId(id);
 
                 Respuesta nueva = new Respuesta
@@ -58,10 +75,13 @@ namespace ServicioEncuestas
                 manager.RegistrarRespuesta(nueva, selectedEncuesta);
                 //Response.Redirect("Default.aspx");//vuelve al menú principal
                 Response.Redirect("Default.aspx",false);//cuando da error por subproceso anulado
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception ex)
             {
                 //MessageBox.Show($"{ex.Message}||{ex.StackTrace}", "Error!");
+                string ERROR = HttpUtility.UrlEncode($"{ ex.Message }||{ ex.StackTrace}");
+                Response.Redirect($"Error.aspx?Exception={ERROR}", false);
             }
         }
     }

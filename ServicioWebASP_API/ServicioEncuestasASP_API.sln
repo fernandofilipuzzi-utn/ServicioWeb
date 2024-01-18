@@ -13,11 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLServerDaoImpl",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasNuevoModels", "..\ImplementacionBaseDatos\Dominio\EncuestasModels\EncuestasNuevoModels.csproj", "{CF14C57A-404D-4834-8F03-2D0B6120A286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasAndroidApp", "ServicioEncuestasAndroidApp\ServicioEncuestasAndroidApp.csproj", "{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "servicio", "servicio", "{069A49EA-FA31-4F42-9118-C1F14C4D1D19}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLiteDaoImpl", "..\ImplementacionBaseDatos\Dominio\EncuestasSQLiteDaoImpl\EncuestasSQLiteDaoImpl.csproj", "{9EF2535F-A49D-41CD-B126-2614831A55FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasAPI", "ServicioEncuestasAPI\ServicioEncuestasAPI.csproj", "{A17CD6F1-1103-4CA7-B838-54443E488654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasASP", "..\ServicioWebASP\ServicioEncuestasASP\ServicioEncuestasASP.csproj", "{5F014F74-57EC-4652-9E68-E9B96100865D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasAPIClient", "ServicioEncuestasAPIClient\ServicioEncuestasAPIClient.csproj", "{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,16 +43,22 @@ Global
 		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCF5DFC0-2FC9-4F0F-9656-5CAAE75997C8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F014F74-57EC-4652-9E68-E9B96100865D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F014F74-57EC-4652-9E68-E9B96100865D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F014F74-57EC-4652-9E68-E9B96100865D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F014F74-57EC-4652-9E68-E9B96100865D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestaServicio", "..\Impl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLServerDaoImpl", "..\ImplementacionBaseDatos\Dominio\EncuestasSQLServerDaoImpl\EncuestasSQLServerDaoImpl.csproj", "{BA2DD45F-E7E2-4D69-98DF-1E725DB387D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestas", "ServicioWebASP\ServicioEncuestas.csproj", "{5F014F74-57EC-4652-9E68-E9B96100865D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasASP", "ServicioEncuestasASP\ServicioEncuestasASP.csproj", "{5F014F74-57EC-4652-9E68-E9B96100865D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasNuevoModels", "..\ImplementacionBaseDatos\Dominio\EncuestasModels\EncuestasNuevoModels.csproj", "{CF14C57A-404D-4834-8F03-2D0B6120A286}"
 EndProject

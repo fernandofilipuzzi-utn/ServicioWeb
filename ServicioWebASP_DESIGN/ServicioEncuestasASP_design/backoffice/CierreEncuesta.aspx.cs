@@ -18,8 +18,10 @@ namespace ServicioEncuestas
             {
                 EncuestaServicio.Services.EncuestaManager manager = new EncuestaServicio.Services.EncuestaManager();
                 if (IsPostBack == false)
-                { //solo cuando se recargue la página
+                { 
+                    //solo cuando se recargue la página
                     //cbLocalidad.Items.AddRange(manager.EncuestasEnCurso.ToArray<Encuesta>());
+
                     cbLocalidad.DataSource = manager.EncuestasEnCurso;
                     cbLocalidad.DataBind();
                 }

@@ -11,9 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestaServicio", "..\Impl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLServerDaoImpl", "..\ImplementacionBaseDatos\Dominio\EncuestasSQLServerDaoImpl\EncuestasSQLServerDaoImpl.csproj", "{BA2DD45F-E7E2-4D69-98DF-1E725DB387D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestas", "ServicioWebASP_POWERBI\ServicioEncuestasASP_POWERBI.csproj", "{5F014F74-57EC-4652-9E68-E9B96100865D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasASP_POWERBI", "ServicioWebASP_POWERBI\ServicioEncuestasASP_POWERBI.csproj", "{5F014F74-57EC-4652-9E68-E9B96100865D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasNuevoModels", "..\ImplementacionBaseDatos\Dominio\EncuestasModels\EncuestasNuevoModels.csproj", "{CF14C57A-404D-4834-8F03-2D0B6120A286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLiteDaoImpl", "..\ImplementacionBaseDatos\Dominio\EncuestasSQLiteDaoImpl\EncuestasSQLiteDaoImpl.csproj", "{9EF2535F-A49D-41CD-B126-2614831A55FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF14C57A-404D-4834-8F03-2D0B6120A286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{55701CF7-2994-46B1-B68D-B8C623154C8D} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{BA2DD45F-E7E2-4D69-98DF-1E725DB387D5} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{CF14C57A-404D-4834-8F03-2D0B6120A286} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
+		{9EF2535F-A49D-41CD-B126-2614831A55FB} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E74AFCEE-393C-4347-BF7A-ECABD0EA6820}
