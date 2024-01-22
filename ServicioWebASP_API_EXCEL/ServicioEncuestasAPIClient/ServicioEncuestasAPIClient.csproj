@@ -127,9 +127,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="img\cerrar-encuesta.jpg" />
-    <Content Include="img\inicio-encuesta.jpg" />
-    <Content Include="img\registrar-encuesta.jpg" />
+    <Content Include="img\excel.jpg" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -214,6 +212,13 @@
       <Project>{ba2dd45f-e7e2-4d69-98df-1e725db387d5}</Project>
       <Name>EncuestasSQLServerDaoImpl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServicioExcelAPI.Client.Services\ServicioAPI.Client.Services.csproj">
+      <Project>{e59b0db4-0405-469c-8aaa-c503b5b1bddd}</Project>
+      <Name>ServicioAPI.Client.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

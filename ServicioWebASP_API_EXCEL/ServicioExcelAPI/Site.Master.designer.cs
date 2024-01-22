@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestasAPIClient
+namespace ServicioAPI
 {
 
 
-    public partial class _Default
+    public partial class SiteMaster
     {
 
         /// <summary>
-        /// btnExcel control.
+        /// MainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExcel;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
     }
 }

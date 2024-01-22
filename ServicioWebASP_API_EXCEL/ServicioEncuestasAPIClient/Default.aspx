@@ -3,14 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h3 class="display-4">Mi ministerio de transporte</h3>
-        <p class="lead">Encuesta sobre el uso del transporte.</p>
+        <h3 class="display-4">Prueba API Excel</h3>
+        <p class="lead">.</p>
     </div>
 
     <div class="container row text-center m-2">
 
         <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
-            <img src="./img/registrar-encuesta.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+            <img src="./img/excel.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
             <div class="card-body">
                 <div class="card-title">
                     <h2>Exportar Excel</h2>
@@ -21,7 +21,7 @@
 
             </div>
             <div class="text-center">
-                <asp:LinkButton class="btn btn-primary" ID="btnExcel" OnClick="btnExcel_Click" runat="server">Ir</asp:LinkButton>
+                <asp:LinkButton class="btn btn-primary" ID="btnExcel" OnClick="btnExcel_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
             </div>
         </div>
 
