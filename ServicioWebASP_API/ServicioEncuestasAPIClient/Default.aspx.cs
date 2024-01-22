@@ -17,7 +17,7 @@ namespace ServicioEncuestasAPIClient
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            string url = "https://localhost:44345/api/Excel/GetExcel";
+            //string url = "https://localhost:44345/api/Excel/GetExcel";
         }
 
         protected void btnExcel_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace ServicioEncuestasAPIClient
                 {
                     var requestContent = JsonConvert.SerializeObject(dt);
                     //
-                    string url = "http://localhost:5001/api/Excel/GetExcel";
+                    string url = "http://localhost:5002/api/Excel/GetExcel";
 
                     var request = new HttpRequestMessage(HttpMethod.Post, url)
                     {
