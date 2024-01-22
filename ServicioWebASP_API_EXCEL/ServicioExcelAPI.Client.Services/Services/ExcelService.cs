@@ -82,6 +82,7 @@ namespace ServicioAPI.Client.Services.Services
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
     }
