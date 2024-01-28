@@ -54,7 +54,7 @@ en este punto como vista se trabaja una aplicación winform
 <summary>Inicio del proceso de la encuesta</summary>
 
 <div align="center">
-        <img style="width:60%;" src="ServicioWebASP/ServicioWebASP/docs/pantallazo_inicio_encuesta.jpg"/>
+        <img style="width:60%;" src="ServicioWebASP/ServicioEncuestasASP/docs/pantallazo_inicio_encuesta.jpg"/>
         <p>Figura 2. Menú de inicio de la encuesta</p>
 </div>
 
@@ -64,8 +64,8 @@ en este punto como vista se trabaja una aplicación winform
 <summary>Proceso de cierre de la encuesta</summary>
 
 <div align="center">
-        <img style="width:60%;" src="ServicioWebASP/ServicioEncuestasASP/docs/pantallazo_formulario_encuesta.jpg"/>
-        <p>Figura 3. Formulario para la consulta al usuario.</p>
+        <img style="width:60%;" src="ServicioWebASP/ServicioEncuestasASP/docs/pantallazo_cierre_encuesta.jpg"/>
+        <p>Figura 3. Formulario cierre encuesta</p>
 </div>
 
 <div align="center">
@@ -79,7 +79,7 @@ en este punto como vista se trabaja una aplicación winform
 <summary>Formulario de consulta</summary>
 
 <div align="center">
-        <img style="width:60%;" src="ServicioWebASP/ServicioWebASP/docs/pantallazo_formulario_encuesta.jpg"/>
+        <img style="width:60%;" src="ServicioWebASP/ServicioEncuestasASP/docs/pantallazo_formulario_encuesta.jpg"/>
         <p>Figura 5. Formulario para la consulta al usuario.</p>
 </div>
 
