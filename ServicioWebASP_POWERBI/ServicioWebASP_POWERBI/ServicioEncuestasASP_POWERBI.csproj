@@ -264,6 +264,10 @@
       <Project>{ba2dd45f-e7e2-4d69-98df-1e725db387d5}</Project>
       <Name>EncuestasSQLServerDaoImpl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PowerBIAPIServer.ClientServices\PowerBIAPIServer.ClientServices.csproj">
+      <Project>{3d6950f5-0da8-4d65-a697-28d69e2e41a7}</Project>
+      <Name>PowerBIAPIServer.ClientServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

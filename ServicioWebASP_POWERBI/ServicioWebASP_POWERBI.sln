@@ -17,10 +17,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasNuevoModels", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLiteDaoImpl", "..\ImplementacionBaseDatos\Dominio\EncuestasSQLiteDaoImpl\EncuestasSQLiteDaoImpl.csproj", "{9EF2535F-A49D-41CD-B126-2614831A55FB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "powerbi", "powerbi", "{64EEE992-F4D9-4DF4-908E-2B06309A5AF7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reportes powerbi", "reportes powerbi", "{64EEE992-F4D9-4DF4-908E-2B06309A5AF7}"
 	ProjectSection(SolutionItems) = preProject
 		powerbi_src\prueba.pbix = powerbi_src\prueba.pbix
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{C187F414-60B3-419A-A293-B0700D82E406}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app web de prueba", "app web de prueba", "{70FEA7A7-5F40-458A-8147-A7DBC2C2002A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AC999017-D7E4-4EBD-A246-1634D057B47B}"
+	ProjectSection(SolutionItems) = preProject
+		pantallazo_powerbi_embedded.jpg = pantallazo_powerbi_embedded.jpg
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerBIAPIServer.ClientServices", "PowerBIAPIServer.ClientServices\PowerBIAPIServer.ClientServices.csproj", "{3D6950F5-0DA8-4D65-A697-28D69E2E41A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,16 +64,23 @@ Global
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EF2535F-A49D-41CD-B126-2614831A55FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6950F5-0DA8-4D65-A697-28D69E2E41A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6950F5-0DA8-4D65-A697-28D69E2E41A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6950F5-0DA8-4D65-A697-28D69E2E41A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6950F5-0DA8-4D65-A697-28D69E2E41A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{B41D028F-FCED-4EAB-AC3B-917773D2EDA6} = {C187F414-60B3-419A-A293-B0700D82E406}
 		{24F04221-1406-47B4-8DEB-8055F69B720A} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{55701CF7-2994-46B1-B68D-B8C623154C8D} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{BA2DD45F-E7E2-4D69-98DF-1E725DB387D5} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
+		{5F014F74-57EC-4652-9E68-E9B96100865D} = {70FEA7A7-5F40-458A-8147-A7DBC2C2002A}
 		{CF14C57A-404D-4834-8F03-2D0B6120A286} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
 		{9EF2535F-A49D-41CD-B126-2614831A55FB} = {B41D028F-FCED-4EAB-AC3B-917773D2EDA6}
+		{3D6950F5-0DA8-4D65-A697-28D69E2E41A7} = {C187F414-60B3-419A-A293-B0700D82E406}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E74AFCEE-393C-4347-BF7A-ECABD0EA6820}
