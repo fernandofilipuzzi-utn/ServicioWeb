@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8CDB5DBB-5DD6-4DF9-913D-48F992DBE72E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SQLite_Encuesta_Select</RootNamespace>
-    <AssemblyName>SQLite_Encuesta_Select</AssemblyName>
+    <RootNamespace>SQLite_Respuesta_Select</RootNamespace>
+    <AssemblyName>SQLite_Respuesta_Select</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

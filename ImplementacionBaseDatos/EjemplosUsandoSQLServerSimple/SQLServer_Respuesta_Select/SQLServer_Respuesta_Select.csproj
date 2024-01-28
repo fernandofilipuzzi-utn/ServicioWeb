@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1D904486-9E1F-4AE8-9978-B7C20CEC97DF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DB_Respuesta_Select</RootNamespace>
-    <AssemblyName>DB_Respuesta_Select</AssemblyName>
+    <RootNamespace>SQLServer_Respuesta_Select</RootNamespace>
+    <AssemblyName>SQLServer_Respuesta_Select</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

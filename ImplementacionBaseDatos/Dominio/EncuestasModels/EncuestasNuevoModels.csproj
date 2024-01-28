@@ -7,8 +7,8 @@
     <ProjectGuid>{CF14C57A-404D-4834-8F03-2D0B6120A286}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EncuestasModels</RootNamespace>
-    <AssemblyName>EncuestasModels</AssemblyName>
+    <RootNamespace>EncuestasNuevoModels</RootNamespace>
+    <AssemblyName>EncuestasNuevoModels</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
