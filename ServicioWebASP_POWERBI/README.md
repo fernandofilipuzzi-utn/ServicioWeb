@@ -1,7 +1,7 @@
 # PowerBI ejemplo
 
 <div align="center">
-        <img style="width:60%;" src="ServicioWebASP_POWERBI/pantallazo_powerbi_embedded.jpg"/>
+        <img style="width:60%;" src="./pantallazo_powerbi_embedded.jpg"/>
         <p>Figura 1. Vista del reporte embebido. </p>
 </div>
 
