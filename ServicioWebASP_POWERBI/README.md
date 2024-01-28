@@ -1,7 +1,9 @@
 # PowerBI ejemplo
 
-
-
+<div align="center">
+        <img style="width:60%;" src="ServicioWebASP_POWERBI/pantallazo_powerbi_embedded.jpg"/>
+        <p>Figura 1. Vista del reporte embebido. </p>
+</div>
 
 ## Temas
 * [Embebiendo el reporte](# 'Embebiendo el reporte')
@@ -11,14 +13,11 @@
 <details>
         <summary>Cómo embeber el documento en la página aspx</summary>
         
-
-```
 Página ejemplo 
 ```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ServicioWebASP_POWERBI.Reportes" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -44,12 +43,12 @@ protected void Page_Load(object sender, EventArgs e)
         iframeControl.Attributes["src"] = $"http://localhost:8000/Reports/powerbi/prueba?rs:embed=true&embedToken={embedToken}";
     }
 }
-
+```
 </details>
 
 ## Obtener el token
 <details>
-        <summary></summary>
+        <summary>Obtener el token</summary>
      
 
 ```csharp
@@ -87,6 +86,4 @@ namespace PowerBIAPIServer.ClientServices.Services
     }
 }
 ```
-
-
 </details>
