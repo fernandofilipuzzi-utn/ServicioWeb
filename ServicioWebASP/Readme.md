@@ -1,17 +1,16 @@
 
 
-## Aplicaciones Básica Web Form - ASP
+## Aplicación Básica Web Form - ASP
 
-<details open>
-        <summary>web, tercera parte</summary>
         
 <details open>
-        <summary>Menú principal</summary>
+<summary>Menú principal</summary>
         
 <div align="center">
-        <img style="width:60%;" src="ServicioWebASP/ServicioEncuestasASP/docs/pantallazo_menu.jpg"/>
+        <img style="width:60%;" src="./ServicioEncuestasASP/docs/pantallazo_menu.jpg"/>
         <p>Figura 2. Menú principal </p>
 </div>
+
 </details>
 
 <details>
@@ -39,7 +38,7 @@
   
 </details>
 
-<details>
+<details open>
 <summary>Formulario de consulta</summary>
 
 <div align="center">
@@ -52,5 +51,4 @@
         <p>Figura 6. Formulario para la consulta al usuario- viendo los validadores.</p>
 </div>
  
-</details>
 </details>
