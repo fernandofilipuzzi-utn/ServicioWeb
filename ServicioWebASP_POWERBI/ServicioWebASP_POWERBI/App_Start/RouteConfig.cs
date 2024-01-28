@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace ServicioEncuestas
+namespace ServicioWebASP_POWERBI
 {
     public static class RouteConfig
     {

@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestas
+namespace ServicioWebASP_POWERBI
 {
 
 

@@ -1,6 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"
-    AutoEventWireup="true" CodeBehind="CierreEncuesta.aspx.cs"
-    Inherits="ServicioEncuestas.CierreEncuesta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CierreEncuesta.aspx.cs" Inherits="ServicioWebASP_POWERBI.CierreEncuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">

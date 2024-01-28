@@ -19,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioExcelAPI", "Servici
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioEncuestasASP_APIClient", "ServicioEncuestasAPIClient\ServicioEncuestasASP_APIClient.csproj", "{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api servicio", "api servicio", "{F5BEA9CB-1205-41D0-B820-92B9ECD5A1CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api_servicio", "api_servicio", "{F5BEA9CB-1205-41D0-B820-92B9ECD5A1CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioAPI.Client.Services", "ServicioExcelAPI.Client.Services\ServicioAPI.Client.Services.csproj", "{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aplicacion web cliente", "aplicacion web cliente", "{75122850-920B-4CC5-86BE-6554F22560FA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app_web_cliente_consume_api", "app_web_cliente_consume_api", "{75122850-920B-4CC5-86BE-6554F22560FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{C0907374-2630-448D-BF9A-EEFA2D4C6871}"
 EndProject

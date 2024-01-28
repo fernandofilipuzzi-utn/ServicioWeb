@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace ServicioEncuestas
+namespace ServicioWebASP_POWERBI
 {
     public class Global : HttpApplication
     {

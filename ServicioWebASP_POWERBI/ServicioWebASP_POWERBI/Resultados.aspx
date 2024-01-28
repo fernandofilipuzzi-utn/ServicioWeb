@@ -1,6 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" 
-        AutoEventWireup="true" CodeBehind="Resultados.aspx.cs" 
-        Inherits="ServicioEncuestas.Resultados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Resultados.aspx.cs" Inherits="ServicioWebASP_POWERBI.Resultados" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

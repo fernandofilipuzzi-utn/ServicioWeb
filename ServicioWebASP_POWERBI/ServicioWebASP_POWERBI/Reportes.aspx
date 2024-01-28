@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ServicioEncuestas.Reportes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ServicioWebASP_POWERBI.Reportes" %>
 
 <!DOCTYPE html>
 
