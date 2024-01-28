@@ -23,7 +23,7 @@ En este respositorio se desarrollan una seríe de temas a modo introducción a t
 2- Luego, apartir de esto se desarrolla el modelo de capas utilizando principalmente el patron dao -
         
 <div align="center">
-        <img style="width:20%;" src="ImplementacionBaseDatos/docs/modelo_de_capas.png"/>
+        <img style="width:40%;" src="ImplementacionBaseDatos/docs/modelo_de_capas.png"/>
         <p>Figura 1. Modelo de capas </p>                  
 </div>
                 
