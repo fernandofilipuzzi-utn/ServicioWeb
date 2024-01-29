@@ -5,14 +5,26 @@ En este respositorio se desarrollan una seríe de temas a modo introducción a t
 
 ## Temas
 * [Introducción a servicio, protocolo http, y páginas html](# 'Introducción a servicio, protocolo http, y páginas html')
-* [Introducción Bases de datos en c#](# 'Introducción Bases de datos en c#')
 * [Aplicaciones web - páginas de estilos, bootstrap e integración con bases de datos.](# 'Aplicaciones web - páginas de estilos, bootstrap e integración con bases de datos.')
+* [Introducción Bases de datos en c#](# 'Introducción Bases de datos en c#')
 * [Aplicaciones webform - ASP](# 'Aplicaciones webform - ASP')
 
 ## Introducción a servicio, protocolo http, y páginas html
 <details>
         <summary>web, primera parte</summary>
         Para eso se construye un pequeño servicio para ver como se forman las consultas (request) y respuestas (response) http, el hilo que atiende estas consultas, y que elementos html intervienen.
+
+* [Ver subcarpeta de la solución: ServicioWebSimple](ServicioWebSimple)
+
+</details>
+
+## Aplicaciones web - páginas de estilos, bootstrap e integración con bases de datos.
+
+<details open>
+<summary>web, segunda parte</summary>
+
+* [Ver subcarpeta de la solución: ServicioWebSimple](ServicioWebSimpleCss)
+  
 </details>
 
 ## Introducción Bases de datos en c#
@@ -30,12 +42,6 @@ En este respositorio se desarrollan una seríe de temas a modo introducción a t
 en este punto como vista se trabaja una aplicación winform
 </details>                
 
-## Aplicaciones web - páginas de estilos, bootstrap e integración con bases de datos.
-
-<details open>
-        <summary>web, segunda parte</summary>
-</details>
-
 ## Aplicaciones Básica Web Form - ASP
 
 <details open>
@@ -49,6 +55,6 @@ en este punto como vista se trabaja una aplicación winform
         <p>Figura 2. Menú principal </p>
 </div>
 
-[Ver subcarpeta de la solución](ServicioWebASP)
+* [Ver subcarpeta de la solución](ServicioWebASP)
 </details>
 
