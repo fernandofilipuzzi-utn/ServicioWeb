@@ -14,9 +14,12 @@ namespace ServicioAPI
 
         }
 
-        public void ShowMessage(string titulo, string mensaje)
+        public void ShowMessage(string mensaje, string titulo="Mensaje")
         {
-            ScriptManager.RegisterStartupScript(this, GetType(), "showModal", $"mostrarModal('{mensaje}');", true);
+            string mensajeEncoded = HttpUtility.HtmlEncode(mensaje);
+            //            ScriptManager.RegisterStartupScript(this, GetType(), "showModal", $"showMessage('<![CDATA[{mensaje}]]','{titulo}');", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "showModal", $"showMessage('{mensajeEncoded}','{titulo}');", true);
+
         }
     }
 }

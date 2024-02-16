@@ -16,7 +16,7 @@
             <div class="col">
                 <div class="row">
 
-                    <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
                         <img src="./img/registrar-encuesta.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
                         <div class="card-body">
                             <div class="card-title">
@@ -38,23 +38,23 @@
                 <div class="h3">Ejemplos usando API Web</div>
 
                 <div class="row">
-                    <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
                         <img src="./img/excel.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
                         <div class="card-body">
                             <div class="card-title">
                                 <h2>Exportar a Excel</h2>
                             </div>
                             <div class="card-text" style="max-height: 60px; overflow: hidden;">
-                                <p>Exportando un DataTable a XLSX</p>
+                                <p>Generar un fichero excel(XLSX) por medio de un datatable</p>
                             </div>
 
                         </div>
                         <div class="text-center">
-                            <asp:LinkButton class="btn btn-primary" ID="btnExcel1" OnClick="btnExcel1_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                            <asp:LinkButton class="btn btn-primary" ID="btnExcelDesdeUnDataTable" OnClick="btnExcelDesdeUnDataTable_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
                         </div>
                     </div>
 
-                    <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
                         <img src="./img/excel2.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
                         <div class="card-body">
                             <div class="card-title">

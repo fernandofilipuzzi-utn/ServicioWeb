@@ -16,28 +16,35 @@ namespace ServicioAPI
 
         }
 
-        protected void btnExcel1_Click(object sender, EventArgs e)
+        protected void btnExcelDesdeUnDataTable_Click(object sender, EventArgs e)
         {
-            string url = "http://localhost:7777/api/Excel/GetExcel";
+            //Generar un fichero excel(XLSX) por medio de un datatable
+
+            //acces remoto
+            //string url = @"http://localhost:7777/api/Excel/GetExcel";
+            //acceso local
+            string url = @"/api/Excel/GetExcel";
+
             try
             { 
-                #region ejemplo
+                #region ejemplo datatable
                 DataSet dataSet = new DataSet();
                 DataTable dt = new DataTable();
                 dataSet.Tables.Add(dt);
-                dt.Columns.Add("A1", typeof(string));
-                dt.Columns.Add("B1", typeof(string));
+                dt.Columns.Add("A", typeof(string));
+                dt.Columns.Add("B", typeof(int));
+                dt.Columns.Add("C", typeof(DateTime));
+
                 DataRow fila = dt.NewRow();
-                fila["A1"] = "a";
-                fila["B1"] = "b";
+                fila["A"] = "contenido 1"; fila["B"] = 3; fila["C"] = DateTime.Now;
                 dt.Rows.Add(fila);
+
                 fila = dt.NewRow();
-                fila["A1"] = "c";
-                fila["B1"] = "d";
+                fila["A"] = "contenido 2"; fila["B"] = 5; fila["C"] = DateTime.Now;
                 dt.Rows.Add(fila);
                 #endregion 
 
-                /*libreria para manejar las peticiones a la api que resuelve esto*/
+                /*lib soporte creada para delegar las llamadas a las apis. para usar en otros proyectos*/
                 ExcelClientService oService = new ExcelClientService();
 
                 oService.ExportarAExcel(dt, Response);

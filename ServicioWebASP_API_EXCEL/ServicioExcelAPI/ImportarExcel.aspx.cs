@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -54,7 +55,10 @@ namespace ServicioAPI
                 }
                 catch (Exception ex)
                 {
-                    ((SiteMaster)this.Master).ShowMessage(ex.Message, "Error!");
+                    string mensaje = $"<p>{ex.Message}</p><p>{ex.StackTrace.ToString()}</p>";
+                    if (ex.InnerException != null)
+                        mensaje += $"<p>{ex.InnerException.Message}</p><p>{ex.InnerException.StackTrace.ToString()}</p>";
+                    ((SiteMaster)this.Master).ShowMessage(mensaje, "Error en la solicitud de importación");
                 }
             }
         }

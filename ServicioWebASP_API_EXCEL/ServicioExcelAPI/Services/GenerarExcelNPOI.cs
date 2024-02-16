@@ -43,7 +43,7 @@ namespace ServicioAPI.Services
             }
             else
             {
-                wb = new SXSSFWorkbook();
+                wb = new XSSFWorkbook();
             }
             #endregion
 
@@ -107,6 +107,44 @@ namespace ServicioAPI.Services
 
             GC.Collect();
             return bytes;
+        }
+
+        public DataSet ImportarExcel(Stream stream, TipoFormato formato = TipoFormato.XLSX)
+        {
+            IWorkbook hssfwb = new XSSFWorkbook(stream);
+            ISheet sheet = hssfwb.GetSheetAt(0);
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            ds.Tables.Add(dt);
+
+            IRow headerRow = sheet.GetRow(0);
+            if (headerRow != null)
+            {
+                for (int i = 0; i < headerRow.LastCellNum; i++)
+                {
+                    string columnName = headerRow.GetCell(i).StringCellValue;
+                    dt.Columns.Add(columnName, typeof(string));
+                }
+
+                for (int rowIdx = 1; rowIdx <= sheet.LastRowNum; rowIdx++)
+                {
+                    IRow row = sheet.GetRow(rowIdx);
+                    if (row != null)
+                    {
+                        DataRow newRow = dt.NewRow();
+                        for (int cellIdx = 0; cellIdx < headerRow.LastCellNum; cellIdx++)
+                        {
+                            if (row.GetCell(cellIdx) != null)
+                            {
+                                newRow[cellIdx] = Convert.ToString(row.GetCell(cellIdx).ToString());
+                            }
+                        }
+                        dt.Rows.Add(newRow);
+                    }
+                }
+            }
+            return ds;
         }
     }
 }

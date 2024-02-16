@@ -80,47 +80,36 @@ namespace ServicioAPI.Controllers
         [Route("Excel/ImportarExcel")]
         public IHttpActionResult PostImportarExcel()
         {
+            DataSet ds=new DataSet();
+            ds.Tables.Add(new DataTable("Resultado"));
+
             if (!Request.Content.IsMimeMultipartContent())
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
 
-            var provider = new MultipartMemoryStreamProvider();
-
-            Request.Content.ReadAsMultipartAsync(provider).Wait();
-            var archivo = provider.Contents.FirstOrDefault();
-            var archivoStream = archivo.ReadAsStreamAsync().Result;
-
-            /* si quiero guardarlo en el server
-            string appPath = System.Web.Hosting.HostingEnvironment.MapPath("~/");
-            var filePath = Path.Combine(appPath, "UploadsServer", "kk1.xlsx");
-
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            try
             {
-                archivoStream.CopyTo(fileStream);
-            }*/
+                var provider = new MultipartMemoryStreamProvider();
+                Request.Content.ReadAsMultipartAsync(provider).Wait();
+                var archivo = provider.Contents.FirstOrDefault();
+                var archivoStream = archivo.ReadAsStreamAsync().Result;
 
-            IWorkbook hssfwb = new XSSFWorkbook(archivoStream);// HSSFWorkbook(archivoStream);
-          //  XSSFWorkbook
-            //ISheet sheet = hssfwb.GetSheet("");
-            ISheet sheet = hssfwb.GetSheetAt(0);//la primera por defecto
+                /* si quiero guardarlo en el server
+                string appPath = System.Web.Hosting.HostingEnvironment.MapPath("~/");
+                var filePath = Path.Combine(appPath, "UploadsServer", "kk1.xlsx");
 
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            ds.Tables.Add(dt);
-
-            if (sheet.LastRowNum > 1)
-            {
-                if (sheet.GetRow(0) != null)
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    string value = sheet.GetRow(0).GetCell(0).StringCellValue;
-                    dt.Columns.Add(value, typeof(string));
+                    archivoStream.CopyTo(fileStream);
+                }*/
 
-                    for (int row = 1; row <= sheet.LastRowNum; row++)
-                    {
-                        DataRow fila = dt.NewRow();
-                        fila[value] = Convert.ToString( sheet.GetRow(row).GetCell(0).StringCellValue );
-                        dt.Rows.Add(fila);
-                    }
-                }
+                #region generacion excel
+                GenerarExcelNPOI generador = new GenerarExcelNPOI();
+                ds=generador.ImportarExcel(archivoStream);
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
             }
 
             return Ok(ds);

@@ -12,7 +12,6 @@
 
             <div class="col-12 mb-3 mt-3" style="background-color: #dcdced;">
 
-
                 <div class="row justify-content-end p-2">
                     <div class="col-8">
                         <asp:FileUpload ID="fuFicheroExcel" class="file-upload" ToolTip="Elegir excel" name="Subir fichero" value="elegir" runat="server" accept=".xlsx" />
@@ -32,7 +31,8 @@
                     <table class="table table-condensed table-borderless table-hover text-center">
                         <thead class="table-dark">
                             <th>A1</th>
-                            <th>B1</th>                            
+                            <th>B1</th>
+                            <th>C1</th> 
                         </thead>
                         <tbody>
                             <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
@@ -43,6 +43,8 @@
                 <ItemTemplate>
                     <tr>
                         <td><%# Eval("A1") %></td>
+                        <td><%# Eval("B1") %></td>
+                        <td><%# Eval("C1") %></td>
                     </tr>
                 </ItemTemplate>
             </asp:ListView>

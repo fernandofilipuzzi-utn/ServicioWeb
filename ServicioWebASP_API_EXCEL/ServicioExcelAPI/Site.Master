@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 
+    <link rel="stylesheet" href="/Content/checkbox-switch.css">
+    <link rel="stylesheet" href="/Content/input-file.css">
+
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -69,23 +72,23 @@
         </div>
 
         <!-- Modal -->
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <asp:UpdatePanel ID="messageBox" runat="server">
             <ContentTemplate>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="messageBoxContain" tabindex="-1" aria-labelledby="lbTitutlo" aria-hidden="true">
 
                     <div class="modal-dialog">
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Resultado</h5>
+                                <h5 class="modal-title" id="lbTitulo">Resultado</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
 
                             <div class="modal-body">
-                                <p id="pMensaje"></p>
+                                <div id="lbMensaje"></div>
                             </div>
 
                             <div class="modal-footer">
@@ -97,9 +100,20 @@
                 </div>
 
                 <script>
-                    function mostrarModal(resultado) {
-                        document.getElementById('pMensaje').innerHTML = resultado;
-                        $('#exampleModal').modal('show');
+                    function showMessage(mensaje, titulo)
+                    {
+                        /*
+                        document.getElementById('lbTitulo').innerHTML = titulo;
+                        document.getElementById('lbMensaje').innerText = mensaje;
+                        console.log(mensaje)
+                        $('#messageBoxContain').modal('show');
+                        */
+                        document.getElementById('lbTitulo').innerText = titulo;
+                        var mensajeNode = document.createTextNode(mensaje);
+                        var lbMensaje = document.getElementById('lbMensaje');
+                        lbMensaje.innerHTML = ''; // Limpiar cualquier contenido previo
+                        lbMensaje.appendChild(mensajeNode);
+                        $('#messageBoxContain').modal('show');
                     }
                 </script>
 
