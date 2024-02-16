@@ -1,11 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"
-    AutoEventWireup="true" CodeBehind="FormularioEncuesta.aspx.cs"
-    Inherits="ServicioEncuestas.FormularioEncuesta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormularioEncuesta.aspx.cs" Inherits="ServicioEncuestas.FormularioEncuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h3 class="display-4">En cuesta sobre el uso del transporte</h3>
+    <div class="jumbotron ">
+        <h3 class="display-4">Encuesta sobre el uso del transporte</h3>
         <p class="lead">
             Responda las preguntas a continuación sobre su uso del transporte
         </p>

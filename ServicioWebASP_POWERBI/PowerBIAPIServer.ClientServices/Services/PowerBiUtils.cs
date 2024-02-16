@@ -9,30 +9,27 @@ namespace PowerBIAPIServer.ClientServices.Services
 {
     public class PowerBiUtils
     {
-        /// <summary>
-        /// Obtener token de acceso a powerbi
-        /// </summary>
-        /// <returns></returns>
-        public string GetEmbedToken(string reportId)
+        
+        public string GetEmbedToken(string urlServer, string reportId, string workspaceId)
         {
-            string workspaceId = "ESPACIO_DE_TRABAJO";
-            //string reportId = "ID_DE_REPORTE";
-            string apiUrl = $"http://localhost:8000/api/v2.0/GenerateToken/Workspace/{workspaceId}/Report/{reportId}";
+               
+            string apiUrl = $"{urlServer}/api/v2.0/GenerateToken/Workspace/{workspaceId}/Report/{reportId}";
 
             string embedToken = string.Empty;
 
-            using (HttpClient client = new HttpClient())
+            try
             {
-                // autorización si es necesario
-                // client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TOKEN_DE_AUTORIZACION");
-
-                HttpResponseMessage response = client.GetAsync(apiUrl).Result;
-
-                if (response.IsSuccessStatusCode)
+                using (HttpClient client = new HttpClient())
                 {
-                    embedToken = response.Content.ReadAsStringAsync().Result;
+                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        embedToken = response.Content.ReadAsStringAsync().Result;
+                    }
                 }
             }
+            catch (Exception ex) { }
 
             return embedToken;
         }

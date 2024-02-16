@@ -17,16 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 
+    <link rel="stylesheet" href="/Content/checkbox-switch.css">
+    <link rel="stylesheet" href="/Content/input-file.css">
+
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <style>
-        @media (max-width: 767px) {
-            .container.row {
-                min-width: 361px; /* Ajusta este valor según tus necesidades */
-            }
-        }
-    </style>
 </head>
 <body style="background-color: #f1f5f8; min-width: 340px;">
     <form runat="server">

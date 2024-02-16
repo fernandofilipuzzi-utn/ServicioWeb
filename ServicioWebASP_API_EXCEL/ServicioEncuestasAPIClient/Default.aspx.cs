@@ -24,7 +24,7 @@ namespace ServicioEncuestasAPIClient
         {
         }
 
-        protected void btnExcel_Click(object sender, EventArgs e)
+        protected void btnExcel1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -32,9 +32,10 @@ namespace ServicioEncuestasAPIClient
 
                 DataTable dt = encuestaDAO.ListarEncuestas().Tables[0];
 
-                ExcelService oService = new ExcelService();
+                /*libreria para manejar las peticiones a la api que resuelve esto*/
+                ExcelClientService oService = new ExcelClientService();
 
-                oService.GenerarExcel(dt, Response);
+                oService.ExportarAExcel(dt, Response);
 
                 Response.SuppressContent = true;  // Prevents the HTTP headers from being sent to the client.
                 HttpContext.Current.ApplicationInstance.CompleteRequest();
@@ -49,11 +50,10 @@ namespace ServicioEncuestasAPIClient
             }
         }
 
-
         /*
          * esta forma solo anda desde el depurador, algo pasa en el IIS
          * */
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void btnExcel2_Click(object sender, EventArgs e)
         {
             try
             {
@@ -78,5 +78,10 @@ namespace ServicioEncuestasAPIClient
             }
         }
 
+
+        protected void btnImportar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ImportarExcel.aspx");
+        }
     }
 }

@@ -11,25 +11,26 @@ namespace ServicioWebASP_POWERBI
 {
     public partial class Reportes : System.Web.UI.Page
     {
-        /*
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // obtenemos el embed token y asignar al control Object
-                string embedToken = GetEmbedToken();
-                objectControl.Attributes["data"] = $"http://localhost:8000/Reports/powerbi/prueba?rs:embed=true&embedToken={embedToken}";
-            }
-        }
-        */
+                string urlReportServer = "https://localhost";
+                string pathDirectorioVirtual = "ReportesWeb";//ir a report server configuration > dirección url del portal web
+                //
+                string embedToken = "";
+                #region datos identificatorios para esta generación
+                string reporteId = "prueba2";
+                string workspaceId = "prueba";
+                embedToken = new PowerBiUtils().GetEmbedToken(urlReportServer, reporteId, workspaceId);
+                #endregion
+                //
+                string raiz = "powerbi";//desde la web ser ve
+                string pathReporte = "prueba2";//ver en http://tsp/ReportServices o en el la web
+                string pathReporteCompleto = $@"{raiz}/{pathReporte}";
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                PowerBiUtils utils = new PowerBiUtils();                
-                string embedToken = utils.GetEmbedToken("ID_DE_REPORTE");
-                iframeControl.Attributes["src"] = $"http://localhost:8000/Reports/powerbi/prueba?rs:embed=true&embedToken={embedToken}";
+                iframeControl.Attributes["src"] = $"{urlReportServer}/{pathDirectorioVirtual}/{pathReporteCompleto}?rs:embed=true";// &embedToken={embedToken}";
             }
         }
     }

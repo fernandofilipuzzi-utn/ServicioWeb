@@ -1,16 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ServicioWebASP_POWERBI.Reportes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ServicioWebASP_POWERBI.Reportes" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <asp:ScriptManager runat="server"></asp:ScriptManager>
-        <iframe id="iframeControl" runat="server" width="800" height="600" frameborder="0" allowFullScreen="true"></iframe>
-    </form>
-</body>
-</html>
+    <div class="jumbotron">
+        <h3>Encuesta Año: <asp:Label ID="Label1" runat="server"></asp:Label>
+                    de la localidad: <asp:Label ID="Label2" runat="server"></asp:Label></h3>
+        <p>A continuación se muestra los resultados finales de la encuesta.</p>
+    </div>
+
+    <div class="container">    
+        <iframe id="iframeControl" runat="server" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+</asp:Content>

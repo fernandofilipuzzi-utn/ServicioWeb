@@ -1,8 +1,11 @@
 ﻿using Microsoft.Web.Administration;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -11,11 +14,8 @@ using System.Web;
 
 namespace ServicioAPI.Client.Services.Services
 {
-    public class ExcelService
+    public class ExcelClientService
     {
-
-        string url = "http://localhost:5002/api/Excel/GetExcel";
-
         public static void AjustarLimiteRespuesta(string nombreSitio, long nuevoLimite)
         {
             using (ServerManager serverManager = new ServerManager())
@@ -38,8 +38,10 @@ namespace ServicioAPI.Client.Services.Services
             }
         }
 
-        public void GenerarExcel(DataTable dt, HttpResponse @out)
+        //llamada al servicio exportardor a excel
+        public void ExportarAExcel(DataTable dt, HttpResponse @out)
         {
+            string url = "http://localhost:7777/api/Excel/ExportarAExcel";
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -84,6 +86,60 @@ namespace ServicioAPI.Client.Services.Services
             {
                 throw ex;
             }
+        }
+
+
+        //llamada al servicio importador
+        public DataSet ImportarExcel(string pathUpload)
+        {
+            DataSet dataSet=new DataSet();
+            DataTable dt = new DataTable();
+            
+            dataSet.Tables.Add(dt);
+
+            dt.Columns.Add("A1", typeof(string));
+            dt.Columns.Add("B1", typeof(string));
+
+            /*
+            DataRow fila = dt.NewRow();
+            fila["A1"] = "32";
+            fila["B1"] = "32";
+            dt.Rows.Add(fila);
+            */
+            
+            string url = "http://localhost:7777/api/Excel/ImportarExcel";
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                using (FileStream fileStream = File.OpenRead(pathUpload))
+                {
+                    using (var formData = new MultipartFormDataContent())
+                    {
+                        formData.Add(new StreamContent(fileStream), "archivo", Path.GetFileName(pathUpload));
+                        var request = new HttpRequestMessage(HttpMethod.Post, url)
+                        {
+                            Content = formData
+                        };
+                        HttpResponseMessage response = client.SendAsync(request).Result;
+
+                        string dataJson = response.Content.ReadAsStringAsync().Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            dataSet = JsonConvert.DeserializeObject<DataSet>(dataJson);
+                        }
+                        else
+                        {
+                            throw new Exception("error al enviar el fichero");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+    
+            return dataSet; 
         }
     }
 }

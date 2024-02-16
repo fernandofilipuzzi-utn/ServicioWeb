@@ -1,5 +1,6 @@
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
+using NPOI.XSSF.Streaming;
 using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace ServicioAPI.Services
             }
             else
             {
-                wb = new XSSFWorkbook();
+                wb = new SXSSFWorkbook();
             }
             #endregion
 

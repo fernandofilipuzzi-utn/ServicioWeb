@@ -15,21 +15,30 @@ namespace ServicioEncuestasAPIClient
     {
 
         /// <summary>
-        /// Control btnExcel.
+        /// Control btnExcel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExcel;
+        protected global::System.Web.UI.WebControls.LinkButton btnExcel1;
 
         /// <summary>
-        /// Control LinkButton1.
+        /// Control btnExcel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton btnExcel2;
+
+        /// <summary>
+        /// Control btnImportar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnImportar;
     }
 }

@@ -7,38 +7,38 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioWebASP_POWERBI
+namespace ServicioEncuestasAPIClient
 {
 
 
-    public partial class Reportes
+    public partial class ImportarExcel
     {
 
         /// <summary>
-        /// Control Label1.
+        /// Control fuFicheroExcel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.FileUpload fuFicheroExcel;
 
         /// <summary>
-        /// Control Label2.
+        /// Control btnEnviar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
 
         /// <summary>
-        /// Control iframeControl.
+        /// Control ListView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe iframeControl;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }

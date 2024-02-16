@@ -21,27 +21,27 @@
 
             </div>
             <div class="text-center">
-                <asp:LinkButton class="btn btn-primary" ID="btnExcel" OnClick="btnExcel_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                <asp:LinkButton class="btn btn-primary" ID="btnExcel1" 
+                                OnClick="btnExcel1_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                <asp:LinkButton class="btn btn-primary" ID="btnExcel2" 
+                                OnClick="btnExcel2_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
             </div>
         </div>
-
-    </div>
-
-    <div class="container row text-center m-2">
+           
 
         <div class="card col-lg-3 col-md-4 col-sm-6 m-2 p-3">
             <img src="./img/excel.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
             <div class="card-body">
                 <div class="card-title">
-                    <h2>Exportar Excel</h2>
+                    <h2>Importar Excel</h2>
                 </div>
                 <div class="card-text" style="max-height: 60px; overflow: hidden;">
-                    <p>Baja tu Excel yá!</p>
+                    <p>Importá tu Excel yá!</p>
                 </div>
 
             </div>
             <div class="text-center">
-                <asp:LinkButton class="btn btn-primary" ID="LinkButton1" OnClick="LinkButton1_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                <asp:LinkButton class="btn btn-primary" ID="btnImportar" OnClick="btnImportar_Click" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Subir</asp:LinkButton>
             </div>
         </div>
 

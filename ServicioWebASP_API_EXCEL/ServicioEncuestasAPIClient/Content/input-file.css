@@ -1,0 +1,31 @@
+﻿
+
+.file-upload[type="file"] {
+    padding: 10px;
+    width: 100%;
+}
+
+    .file-upload[type="file"]::file-selector-button {
+        display: none;
+    }
+
+    .file-upload[type="file"]::before {
+        border: 2px solid blue;
+        border-radius: 3px 3px 3px 3px;
+        color: blue;
+        background: #9799e6;
+        content: '📂'attr(value);
+        margin: 25px;
+        padding: 5px;
+    }
+
+
+    .file-upload[type="file"]:hover:before {
+        border: 1px groove blue;
+        background: lime;
+    }
+
+    .file-upload[type="file"]:active:before {
+        border: 1px solid blue;
+        background: lightgreen;
+    }
