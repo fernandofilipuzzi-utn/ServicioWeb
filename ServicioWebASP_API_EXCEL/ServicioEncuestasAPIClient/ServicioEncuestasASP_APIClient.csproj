@@ -130,7 +130,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="img\api-web.jpg" />
+    <Content Include="img\cerrar-encuesta.jpg" />
     <Content Include="img\excel.jpg" />
+    <Content Include="img\excel2.jpg" />
+    <Content Include="img\inicio-encuesta.jpg" />
+    <Content Include="img\registrar-encuesta.jpg" />
     <Content Include="ImportarExcel.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />

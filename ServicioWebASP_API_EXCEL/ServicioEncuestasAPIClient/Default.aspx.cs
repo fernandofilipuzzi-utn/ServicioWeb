@@ -18,7 +18,7 @@ namespace ServicioEncuestasAPIClient
     public partial class _Default : Page
     {
 
-        string url = "http://localhost:5002/api/Excel/GetExcel";
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +26,7 @@ namespace ServicioEncuestasAPIClient
 
         protected void btnExcel1_Click(object sender, EventArgs e)
         {
+            string url = "http://localhost:5002/api/Excel/GetExcel";
             try
             {
                 EncuestaSQLServerDaoImpl encuestaDAO = new EncuestaSQLServerDaoImpl();
