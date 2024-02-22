@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeEncuestado
 {
-    public partial class SiteMaster : MasterPage
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,33 +20,37 @@ namespace ServicioEncuestas
 
             if (cookie == null)
             {
-                Response.Redirect("/Admin/login.aspx");
+                Response.Redirect("~/BackofficeEncuestado/login.aspx");
             }
             else
             {
                 string usuario = cookie["usuario"];
                 if (DateTime.Now < cookie.Expires)
                 {
-                    Response.Redirect("/Admin/login.aspx");
+                    Response.Redirect("~/BackofficeEncuestado/Default.aspx");
+                    lbUsuarioNombre.Text = usuario;
                 }
                 else
                 {
-                    Response.Redirect("/Admin/Default.aspx");
-                    lbUsuarioNombre.Text = usuario;
+                    Response.Redirect("~/BackofficeEncuestado/login.aspx");                    
                 }
             }
         }
 
         protected void lbtnCerrar_Click(object sender, EventArgs e)
         {
+            Session.Abandon();
+         
             HttpCookie cookie = Request.Cookies["UsuarioSettings"];
-
+      
             if (cookie != null)
             {
                 cookie.Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies.Add(cookie);
             }
-            Response.Redirect("/Default.aspx");
+            Response.Redirect("~/Default.aspx");
+            //Response.Write("<script>window.location.href = '/Default.aspx';</script>");
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "window.location='" + ResolveClientUrl("~/Default.aspx") + "';", true);
         }
 
         public void ShowMessage(string titulo, string mensaje)

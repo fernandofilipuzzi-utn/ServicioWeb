@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Optimization;
 using System.Web.UI;
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design
 {
     public class BundleConfig
     {

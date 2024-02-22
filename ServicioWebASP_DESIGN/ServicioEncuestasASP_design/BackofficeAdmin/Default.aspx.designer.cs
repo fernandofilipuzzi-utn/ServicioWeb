@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestas_design
+namespace ServicioEncuestas_design.BackofficeAdmin
 {
 
 

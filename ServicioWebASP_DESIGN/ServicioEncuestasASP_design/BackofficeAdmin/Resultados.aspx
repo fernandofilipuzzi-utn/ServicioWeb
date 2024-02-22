@@ -1,17 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" 
-        AutoEventWireup="true" CodeBehind="Resultados.aspx.cs" 
-        Inherits="ServicioEncuestas.Resultados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackofficeAdmin/Site.Master"  AutoEventWireup="true" CodeBehind="Resultados.aspx.cs" Inherits="ServicioEncuestas_design.BackofficeAdmin.Resultados" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h3>Encuesta Año: <asp:Label ID="lbAnio" runat="server"></asp:Label>
-                    de la localidad: <asp:Label ID="lbLocalidad" runat="server"></asp:Label></h3>
-        <p>A continuación se muestra los resultados finales de la encuesta.</p>
-    </div>
 
     <div class="container col-8">
     
+        <h3>Encuesta Año: <asp:Label ID="lbAnio" runat="server"></asp:Label>
+            de la localidad: <asp:Label ID="lbLocalidad" runat="server"></asp:Label></h3>
+
         <div class="container p-3 mb-3" style="background-color: #d6e1ed">
             <h4>Población encuestada:</h4> 
             <asp:Label ID="lbCantidadEncuestados" runat="server"/>

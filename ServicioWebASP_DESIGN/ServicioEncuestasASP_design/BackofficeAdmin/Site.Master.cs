@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeAdmin
 {
-    public partial class SiteMaster : MasterPage
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,19 +20,20 @@ namespace ServicioEncuestas
 
             if (cookie == null)
             {
-                Response.Redirect("/Admin/login.aspx");
+                Response.Redirect("~/BackofficeAdmin/login.aspx");
             }
             else
             {
                 string usuario = cookie["usuario"];
                 if (DateTime.Now < cookie.Expires)
                 {
-                    Response.Redirect("/Admin/login.aspx");
+                    
+                    Response.Redirect("~/BackofficeAdmin/Default.aspx");
+                    lbUsuarioNombre.Text = usuario;
                 }
                 else
                 {
-                    Response.Redirect("/Admin/Default.aspx");
-                    lbUsuarioNombre.Text = usuario;
+                    Response.Redirect("~/BackofficeAdmin/login.aspx");
                 }
             }
         }
@@ -46,7 +47,9 @@ namespace ServicioEncuestas
                 cookie.Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies.Add(cookie);
             }
-            Response.Redirect("/Default.aspx");
+            //Response.Redirect("~/Default.aspx");
+            // Redirige a la página deseada usando JavaScript
+            Response.Write("<script>window.location.href = '~/Default.aspx';</script>");
         }
 
         public void ShowMessage(string titulo, string mensaje)

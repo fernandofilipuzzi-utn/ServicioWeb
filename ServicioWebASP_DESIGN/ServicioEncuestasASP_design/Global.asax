@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ServicioEncuestas.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ServicioEncuestas_design.Global" Language="C#" %>

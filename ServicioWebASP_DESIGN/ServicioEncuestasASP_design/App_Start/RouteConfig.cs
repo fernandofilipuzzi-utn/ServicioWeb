@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design
 {
     public static class RouteConfig
     {

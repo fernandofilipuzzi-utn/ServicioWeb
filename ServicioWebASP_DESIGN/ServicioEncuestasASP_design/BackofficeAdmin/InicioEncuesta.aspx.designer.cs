@@ -7,56 +7,56 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeAdmin
 {
 
 
-    public partial class SiteMaster
+    public partial class InicioEncuesta
     {
 
         /// <summary>
-        /// Control lbUsuarioNombre.
+        /// Control tbANIO.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUsuarioNombre;
+        protected global::System.Web.UI.WebControls.TextBox tbANIO;
 
         /// <summary>
-        /// Control lbtnLogin.
+        /// Control rvfAnio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnLogin;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfAnio;
 
         /// <summary>
-        /// Control lbtnCerrar.
+        /// Control tbLocalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCerrar;
+        protected global::System.Web.UI.WebControls.TextBox tbLocalidad;
 
         /// <summary>
-        /// Control MainContent.
+        /// Control rvfLocalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfLocalidad;
 
         /// <summary>
-        /// Control UpdatePanelModal.
+        /// Control btnIniciarEncuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelModal;
+        protected global::System.Web.UI.WebControls.Button btnIniciarEncuesta;
     }
 }

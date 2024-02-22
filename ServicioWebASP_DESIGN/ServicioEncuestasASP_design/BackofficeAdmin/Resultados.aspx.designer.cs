@@ -7,110 +7,92 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeAdmin
 {
 
 
-    public partial class FormularioEncuesta
+    public partial class Resultados
     {
 
         /// <summary>
-        /// Control tbEmail.
+        /// Control lbAnio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmail;
+        protected global::System.Web.UI.WebControls.Label lbAnio;
 
         /// <summary>
-        /// Control rfvEmail.
+        /// Control lbLocalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        protected global::System.Web.UI.WebControls.Label lbLocalidad;
 
         /// <summary>
-        /// Control cbLocalidad.
+        /// Control lbCantidadEncuestados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbLocalidad;
+        protected global::System.Web.UI.WebControls.Label lbCantidadEncuestados;
 
         /// <summary>
-        /// Control rfvLocalidad.
+        /// Control lbPorcBicicleta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLocalidad;
+        protected global::System.Web.UI.WebControls.Label lbPorcBicicleta;
 
         /// <summary>
-        /// Control ckbUsaBicicleta.
+        /// Control lbPorcCaminando.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbUsaBicicleta;
+        protected global::System.Web.UI.WebControls.Label lbPorcCaminando;
 
         /// <summary>
-        /// Control ckbCamina.
+        /// Control lbPorcTransportePublico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbCamina;
+        protected global::System.Web.UI.WebControls.Label lbPorcTransportePublico;
 
         /// <summary>
-        /// Control ckbTransportePublico.
+        /// Control lbPorcTransportePrivado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbTransportePublico;
+        protected global::System.Web.UI.WebControls.Label lbPorcTransportePrivado;
 
         /// <summary>
-        /// Control ckbTransportePrivado.
+        /// Control lbDistancia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbTransportePrivado;
+        protected global::System.Web.UI.WebControls.Label lbDistancia;
 
         /// <summary>
-        /// Control tbDistancia.
+        /// Control btnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDistancia;
-
-        /// <summary>
-        /// Control rfvDistancia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDistancia;
-
-        /// <summary>
-        /// Control btnAccion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAccion;
+        protected global::System.Web.UI.WebControls.HyperLink btnVolver;
     }
 }

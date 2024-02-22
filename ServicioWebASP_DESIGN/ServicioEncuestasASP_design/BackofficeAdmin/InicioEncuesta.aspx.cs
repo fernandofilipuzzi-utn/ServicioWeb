@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeAdmin
 {
     public partial class InicioEncuesta : System.Web.UI.Page
     {

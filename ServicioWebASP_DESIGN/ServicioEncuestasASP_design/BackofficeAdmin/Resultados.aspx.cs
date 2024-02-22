@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeAdmin
 {
     public partial class Resultados : System.Web.UI.Page
     {
@@ -29,7 +29,7 @@ namespace ServicioEncuestas
 
                     lbCantidadEncuestados.Text = selectedEncuesta.CantidadEncuestados.ToString();
 
-                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicleta}";
+                    lbPorcBicicleta.Text = $"{selectedEncuesta.PorcBicicleta}";
                     lbPorcCaminando.Text = $"{selectedEncuesta.PorcCaminando}";
                     lbPorcTransportePublico.Text = $"{selectedEncuesta.PorcTransportePublico}";
                     lbPorcTransportePrivado.Text = $"{selectedEncuesta.PorcTransportePrivado}";

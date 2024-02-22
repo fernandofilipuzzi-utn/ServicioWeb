@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestas
+namespace ServicioEncuestas_design.BackofficeEncuestado
 {
 
 
-    public partial class _Default
+    public partial class Default
     {
     }
 }

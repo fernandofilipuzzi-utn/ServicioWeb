@@ -1,15 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="InicioEncuesta.aspx.cs" Inherits="ServicioEncuestas.InicioEncuesta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackofficeAdmin/Site.Master" AutoEventWireup="true" CodeBehind="InicioEncuesta.aspx.cs" Inherits="ServicioEncuestas_design.BackofficeAdmin.InicioEncuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="jumbotron">
-        <h3 class="display-4">Inicio de nueva encuesta</h3>
-        <p class="lead">
-            Para abrir un nuevo proceso de encuestas ingrese el año y la localidad de interés. Finalmente
-            para confirmar el alta haga click en "Iniciar Nueva Encuesta"
-        </p>
-    </div>
-
+    
     <div class="container">
         <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
             <h3 class="text-center">Datos generales</h3>

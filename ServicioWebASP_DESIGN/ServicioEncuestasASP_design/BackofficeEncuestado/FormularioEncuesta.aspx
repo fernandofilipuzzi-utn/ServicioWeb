@@ -1,17 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"
-    AutoEventWireup="true" CodeBehind="FormularioEncuesta.aspx.cs"
-    Inherits="ServicioEncuestas.FormularioEncuesta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BackofficeEncuestado/Site.Master" AutoEventWireup="true" CodeBehind="FormularioEncuesta.aspx.cs"  Inherits="ServicioEncuestas_design.BackofficeEncuestado.FormularioEncuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h3 class="display-4">En cuesta sobre el uso del transporte</h3>
-        <p class="lead">
-            Responda las preguntas a continuación sobre su uso del transporte
-        </p>
-    </div>
 
     <div class="container">
+
+        <h3 >En cuesta sobre el uso del transporte</h3>
 
         <div class="col p-3 mb-3" style="background-color: #d6e1ed;">
 
@@ -20,14 +14,17 @@
             <div class="form-group">
                 <label for="tbEmail">Email: </label>
                 <asp:TextBox ID="tbEmail" class="form-control" type="email" name="tbEmail" runat="server" />
-                <!--validador-->
+                <!--validador
                 <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="tbEmail" InitialValue="" ErrorMessage="Debe completar con su correo electrónico." ForeColor="Red" Display="Dynamic" />
+                -->
             </div>
 
             <div class="form-group">
                 <label for="cbLocalidad">Elija la Localidad a la que pertence: </label>
                 <asp:DropDownList ID="cbLocalidad" class="form-control" name="tbDistancia" DataTextField="Localidad" DataValueField="Id" runat="server" />
+                <!--
                 <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="cbLocalidad" InitialValue="" ErrorMessage="Debe completar con la localidad a la que pertence." ForeColor="Red" Display="Dynamic" />
+                -->
             </div>            
         </div>
 
@@ -62,7 +59,9 @@
             <div class="form-group">
                 <label for="tbDistancia">Distancia al lugar de trabajo o estudio: </label>
                 <asp:TextBox ID="tbDistancia" name="tbDistancia" runat="server" />(km)
-                <asp:RequiredFieldValidator ID="rfvDistancia"  Enabled="true" runat="server" ControlToValidate="tbDistancia" InitialValue="" ErrorMessage="Debe completar el campo." ForeColor="Red" Display="Dynamic" />
+                <!--
+                <asp:RequiredFieldValidator ID="rfvDistancia" Enabled="true" runat="server" ControlToValidate="tbDistancia" InitialValue="" ErrorMessage="Debe completar el campo." ForeColor="Red" Display="Dynamic" />
+                    -->
             </div>
         </div>
 

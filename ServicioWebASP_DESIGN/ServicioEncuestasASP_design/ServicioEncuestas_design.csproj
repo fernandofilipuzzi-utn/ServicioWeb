@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServicioEncuestas</RootNamespace>
-    <AssemblyName>ServicioEncuestas</AssemblyName>
+    <RootNamespace>ServicioEncuestas_design</RootNamespace>
+    <AssemblyName>ServicioEncuestas_design</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -124,8 +124,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="backoffice\CierreEncuesta.aspx" />
-    <Content Include="backoffice\Default.aspx" />
+    <Content Include="BackofficeAdmin\CierreEncuesta.aspx" />
+    <Content Include="BackofficeAdmin\Default.aspx" />
+    <Content Include="BackofficeAdmin\login.aspx" />
+    <Content Include="BackofficeEncuestado\Default.aspx" />
+    <Content Include="BackofficeEncuestado\login.aspx" />
+    <Content Include="Content\checkbox-switch.css" />
+    <Content Include="Content\copy-paste.css" />
+    <Content Include="Content\navarlateral.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="docs\pantallazo_formulario_encuesta-validación.jpg" />
@@ -136,17 +142,21 @@
     <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="public\FormularioEncuesta.aspx" />
+    <Content Include="BackofficeEncuestado\FormularioEncuesta.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="img\cerrar-encuesta.jpg" />
+    <Content Include="img\administrativo.jpg" />
     <Content Include="img\inicio-encuesta.jpg" />
+    <Content Include="img\ver-resultados-estadisticos.jpg" />
+    <Content Include="img\registrar-encuesta-azul.jpg" />
     <Content Include="img\registrar-encuesta.jpg" />
-    <Content Include="backoffice\InicioEncuesta.aspx" />
-    <Content Include="backoffice\Resultados.aspx" />
+    <Content Include="BackofficeAdmin\InicioEncuesta.aspx" />
+    <Content Include="BackofficeAdmin\Resultados.aspx" />
+    <Content Include="Scripts\copy-paste.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -175,19 +185,47 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="backoffice\CierreEncuesta.aspx.cs">
+    <Compile Include="BackofficeAdmin\CierreEncuesta.aspx.cs">
       <DependentUpon>CierreEncuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="backoffice\CierreEncuesta.aspx.designer.cs">
+    <Compile Include="BackofficeAdmin\CierreEncuesta.aspx.designer.cs">
       <DependentUpon>CierreEncuesta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="backoffice\Default.aspx.cs">
+    <Compile Include="BackofficeAdmin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="backoffice\Default.aspx.designer.cs">
+    <Compile Include="BackofficeAdmin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackofficeAdmin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackofficeAdmin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackofficeAdmin\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackofficeAdmin\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BackofficeEncuestado\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackofficeEncuestado\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackofficeEncuestado\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackofficeEncuestado\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -203,29 +241,36 @@
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
-    <Compile Include="public\FormularioEncuesta.aspx.cs">
+    <Compile Include="BackofficeEncuestado\FormularioEncuesta.aspx.cs">
       <DependentUpon>FormularioEncuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="public\FormularioEncuesta.aspx.designer.cs">
+    <Compile Include="BackofficeEncuestado\FormularioEncuesta.aspx.designer.cs">
       <DependentUpon>FormularioEncuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackofficeEncuestado\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackofficeEncuestado\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="backoffice\InicioEncuesta.aspx.cs">
+    <Compile Include="BackofficeAdmin\InicioEncuesta.aspx.cs">
       <DependentUpon>InicioEncuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="backoffice\InicioEncuesta.aspx.designer.cs">
+    <Compile Include="BackofficeAdmin\InicioEncuesta.aspx.designer.cs">
       <DependentUpon>InicioEncuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="backoffice\Resultados.aspx.cs">
+    <Compile Include="BackofficeAdmin\Resultados.aspx.cs">
       <DependentUpon>Resultados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="backoffice\Resultados.aspx.designer.cs">
+    <Compile Include="BackofficeAdmin\Resultados.aspx.designer.cs">
       <DependentUpon>Resultados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -240,6 +285,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackofficeAdmin\Site.Master" />
+    <Content Include="BackofficeEncuestado\Site.Master" />
+    <Content Include="Bundle.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

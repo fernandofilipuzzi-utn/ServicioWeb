@@ -34,8 +34,8 @@
         <asp:ScriptManager runat="server">
             <Scripts>
                 <asp:ScriptReference Path="https://code.jquery.com/jquery-3.5.1.slim.min.js" />
-                <asp:ScriptReference Path="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" />
-                <asp:ScriptReference Path="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" />
+ <asp:ScriptReference Path="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" />
+ <asp:ScriptReference Path="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" />
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
@@ -55,35 +55,41 @@
         </asp:ScriptManager>
 
         <!-- Barra de navegación -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">App</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNavbar"
-                aria-controls="MainNavbar" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="MainNavbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="./Default.aspx">Inicio <span class="sr-only">(current)</span></a></li>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark align-item-start">
+     <a class="navbar-brand" href="/">App</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNavbar"
+         aria-controls="MainNavbar" aria-expanded="false" aria-label="Toggle Navigation">
+         <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="MainNavbar">
+         <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+                 <a class="nav-link" href="/Default">Home<span class="sr-only">(current)</span></a>
+             </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">Sobre..</a> </li>
+             <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ver</a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                     <a class="dropdown-item" href="/Admin/credenciales.aspx">Credenciales</a>
+                 </div>
+             </li>
+         </ul>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administración</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <a class="dropdown-item" href="InicioEncuesta.aspx">Iniciar Nueva Encuesta</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="CierreEncuesta.aspx">Cerrar Encuesta</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Persona</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="FormularioEncuesta.aspx">Responde encuesta</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+         <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="/Admin/login.aspx" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <asp:Label ID="lbUsuarioNombre" Text="Sesión" runat="server"/>
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">                     
+                     
+                     <asp:LinkButton ID="lbtnLogin" OnClick="lbtnLogin_Click" CssClass="dropdown-item" runat="server">Iniciar</asp:LinkButton>
+                     <div class="dropdown-divider"></div>
+                     <asp:LinkButton ID="lbtnCerrar" OnClick="lbtnCerrar_Click" CssClass="dropdown-item" runat="server">Cerrar</asp:LinkButton>
+                  </div>
+             </li>
+         </ul>
+     </div>
+ </nav>
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -94,6 +100,44 @@
             </footer>
         </div>
 
+         <!-- Modal -->
+<asp:UpdatePanel ID="UpdatePanelModal" runat="server">
+    <ContentTemplate>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Resultado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p id="pMensaje"></p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            function mostrarModal(resultado) {
+                document.getElementById('pMensaje').innerHTML = resultado;
+                $('#exampleModal').modal('show');
+            }
+        </script>
+
+    </ContentTemplate>
+</asp:UpdatePanel>
+<!-- Fin Modal -->
     </form>
 </body>
 </html>
