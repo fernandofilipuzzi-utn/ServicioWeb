@@ -58,3 +58,24 @@ en este punto como vista se trabaja una aplicación winform
 * [Ver subcarpeta de la solución](ServicioWebASP)
 </details>
 
+
+## Aplicaciones Web Form - ASP - con backoffice (en construcción)
+
+<details open>
+        <summary>diseño de la aplicación web, cuarta parte</summary>
+        
+<div align="center">
+        <img style="width:60%;" src="ServicioWebASP_DESIGN/menu_portal.jpg"/>
+        <p>Figura 3. Menú del portal web </p>
+</div>
+
+<div align="center">
+        <img style="width:60%;" src="ServicioWebASP_DESIGN/pantallazo_menu_backoffice_admin.jpg"/>
+        <p>Figura 4.Menú administrativo </p>
+</div>
+
+
+
+* [Ver subcarpeta de la solución](ServicioWebASP_DESIGN)
+</details>
+
