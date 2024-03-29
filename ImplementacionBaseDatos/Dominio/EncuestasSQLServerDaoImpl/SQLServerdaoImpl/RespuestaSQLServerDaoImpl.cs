@@ -13,7 +13,8 @@ namespace EncuestasSQLServerDaoImpl.SQLServerDaoImpl
     public class RespuestaSQLServerDaoImpl : IRespuestaDAO
     {
         #region parámetros
-        string servidor = "TSP";
+        //string servidor = "TSP";
+        string servidor = "TUPDEV";
         string baseDatos = "db_encuestas";
         #endregion
         string cadenaConexion = "";
@@ -22,6 +23,46 @@ namespace EncuestasSQLServerDaoImpl.SQLServerDaoImpl
         {
             // Cadena de conexión para SQL Server con autenticación de Windows
             cadenaConexion = $"Data Source={servidor};Initial Catalog={baseDatos};Integrated Security=True;";
+            Inicializar();
+        }
+
+        private void Inicializar()
+        {
+            SqlConnection conn = null;
+
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = @"
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'respuestas')
+BEGIN
+    CREATE TABLE respuestas (
+        id INT PRIMARY KEY IDENTITY(1,1), 
+        email VARCHAR(50) NOT NULL,
+        usa_bicicleta BIT NOT NULL,
+        camina INT NOT NULL,
+        usa_transporte_publico INT NOT NULL,
+        usa_transporte_privado INT NOT NULL,
+        distancia_a_su_destino NUMERIC(10,2) NOT NULL,
+        id_encuesta INT 
+    )
+END";
+
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    query.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
         }
 
         public Respuesta Agregar(Respuesta nueva, Encuesta aDondePertenece)

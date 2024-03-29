@@ -13,7 +13,8 @@ namespace EncuestasSQLServerDaoImpl.SQLServerDaoImpl
     public class EncuestaSQLServerDaoImpl : IEncuestaDAO
     {
         #region parámetros
-        string servidor = "TSP";
+        //string servidor = "TSP";
+        string servidor = "TUPDEV";
         string baseDatos = "db_encuestas";
         #endregion
 
@@ -23,6 +24,48 @@ namespace EncuestasSQLServerDaoImpl.SQLServerDaoImpl
         {
             // Cadena de conexión para SQL Server con autenticación de Windows
             cadenaConexion = $"Data Source={servidor};Initial Catalog={baseDatos};Integrated Security=True;";
+            Inicializar();
+        }
+
+        private void Inicializar()
+        {
+            SqlConnection conn = null;
+
+            try
+            {
+                conn = new SqlConnection(cadenaConexion);
+                conn.Open();
+
+                string sql = @"
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'encuestas')
+BEGIN
+    CREATE TABLE encuestas (
+        id INT PRIMARY KEY IDENTITY(1,1), 
+        anio INT NOT NULL,
+        localidad VARCHAR(50) NOT NULL,
+        porc_bicicleta NUMERIC(10,2) DEFAULT 0,
+        porc_caminando NUMERIC(10,2) DEFAULT 0,
+        porc_transporte_publico NUMERIC(10,2) DEFAULT 0,
+        porc_transporte_privado NUMERIC(10,2) DEFAULT 0,
+        distancia_media NUMERIC(10,2) DEFAULT 0,
+        en_curso BIT NOT NULL
+    )
+END
+";
+
+                using (var query = new SqlCommand(sql, conn))
+                {
+                    query.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
         }
 
         public void Actualizar(Encuesta actual)
@@ -34,8 +77,8 @@ namespace EncuestasSQLServerDaoImpl.SQLServerDaoImpl
                 conn.Open();
 
                 string sql = @"
-update encuestas 
-set anio=@anio, 
+UPDATE encuestas 
+SET anio=@anio, 
         localidad=@localidad, 
         porc_bicicleta=@porcBicicleta, 
         porc_caminando=@porcCaminando, 
@@ -43,7 +86,7 @@ set anio=@anio,
         porc_transporte_privado=@porcTransportePrivado,
         distancia_media=@distanciaMedia,
         en_curso=@enCurso  
-where id=@id";
+WHERE id=@id";
 
                 int rowsaffected = 0;
                 using (var query = new SqlCommand(sql, conn))
@@ -94,9 +137,9 @@ where id=@id";
                 conn.Open();
 
                 string sql = @"
-insert encuestas (anio, localidad, en_curso)
-output INSERTED.id 
-values (@anio, @localidad, @enCurso)";
+INSERT INTO encuestas (anio, localidad, en_curso)
+OUTPUT INSERTED.id 
+VALUES (@anio, @localidad, @enCurso)";
 
                 using (var query = new SqlCommand(sql, conn))
                 {

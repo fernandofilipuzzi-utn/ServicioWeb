@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34301.259
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{B41D028F-FCED-4EAB-AC3B-917773D2EDA6}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{90E4B059-CCDC-46A8-95F4-1AEB8759220A}"
 	ProjectSection(SolutionItems) = preProject
 		docs\modelo_de_capas.png = docs\modelo_de_capas.png
+		docs\pantalla_form_app_desktop.png = docs\pantalla_form_app_desktop.png
+		docs\pantalla_menu_app_desktop.png = docs\pantalla_menu_app_desktop.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncuestasSQLiteDaoImpl", "Dominio\EncuestasSQLiteDaoImpl\EncuestasSQLiteDaoImpl.csproj", "{9EF2535F-A49D-41CD-B126-2614831A55FB}"
